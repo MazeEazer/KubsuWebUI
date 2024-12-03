@@ -83,3 +83,11 @@ img {
   font-weight: 400;
   font-size: 16px;
 }
+
+.video {
+  position: absolute;
+}
+
+.back__img {
+  position: relative;
+}
