@@ -1,0 +1,59 @@
+@media(min-width: 576px) {
+  .container {
+    padding: 0 100px;
+  }
+}
+
+@media(min-width: 768px) {
+  .container {
+    padding: 0 150px;
+  }
+}
+
+@media(min-width: 992px) {
+  .container {
+    padding: 0 200px;
+  }
+}
+
+@media(min-width: 1200px) {
+  .container {
+    padding: 0 300px;
+  }
+}
+
+@media(min-width: 1600px) {
+  .container {
+    padding: 0 400px;
+  }
+}
+
+@media(min-width: 1920px) {
+  .container {
+    padding: 0 475px;
+  }
+}
+
+/* FAQ */
+@media(min-width: 1600px) {
+  .faq__title {
+    margin-bottom: 70px;
+  }
+
+  .question__title {
+    font-size: 24px;
+  }
+
+  .question__text {
+    font-size: 20px;
+  }
+
+  .num {
+    left: -13px;
+    font-size: 16px;
+  }
+
+  .fixnum {
+    left: -21px;
+  }
+}

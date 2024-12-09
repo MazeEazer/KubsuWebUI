@@ -56,7 +56,9 @@ img {
 
 :root {
   --white-color: #FFFFFF;
-  --black-color: #000000;
+  --black-color: #050C33;
+  --grey-color: #8b8b8b;
+  --red-color: red;
 }
 
 .list__reset {
@@ -75,14 +77,25 @@ img {
 
 .section__title {
   margin: 0;
+  font-family: Montserrat;
   font-weight: 700;
+  color: var(--black-color);
 }
 
 .text {
   margin: 0;
+  font-family: Montserrat;
   font-weight: 400;
   font-size: 16px;
+  color: var(--black-color);
 }
+
+.container {
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+
 
 .video {
   position: absolute;
@@ -90,4 +103,58 @@ img {
 
 .back__img {
   position: relative;
+}
+
+
+
+
+/* FAQ */
+.FAQ {
+  margin-bottom: 50px;
+}
+
+.faq__title {
+  margin-bottom: 25px;
+  font-size: 42px;
+  line-height: 51.2px;
+  text-align: center;
+}
+
+.first__question {
+  margin-bottom: 20px;
+  outline: 3px solid var(--red-color);
+  outline-offset: 15px;
+}
+
+.spectitle {
+  color: #ff2600;
+}
+
+.question__title {
+  position: relative;
+  font-size: 18px;
+  line-height: 21.94px;
+}
+
+.question__title:not(:first-child) {
+  margin-bottom: 20px;
+}
+
+.question__text {
+  line-height: 22px;
+  color: var(--grey-color);
+}
+
+.num {
+  position: absolute;
+  top: 4px;
+  left: -12px;
+  font-family: Montserrat;
+  font-size: 12px;
+  line-height: 14.63px;
+  color: var(--grey-color);
+}
+
+.fixnum {
+  left: -17px;
 }
