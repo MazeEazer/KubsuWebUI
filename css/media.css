@@ -2,11 +2,19 @@
   .container {
     padding: 0 100px;
   }
+
+  .container2 {
+    padding: 0 100px;
+  }
 }
 
 @media(min-width: 768px) {
   .container {
     padding: 0 150px;
+  }
+
+  .container2 {
+    padding: 0 225px;
   }
 }
 
@@ -14,17 +22,29 @@
   .container {
     padding: 0 200px;
   }
+
+  .container2 {
+    padding: 0 300px;
+  }
 }
 
 @media(min-width: 1200px) {
   .container {
     padding: 0 300px;
   }
+
+  .container2 {
+    padding: 0 400px;
+  }
 }
 
 @media(min-width: 1600px) {
   .container {
     padding: 0 400px;
+  }
+
+  .container2 {
+    padding: 0 600px;
   }
 }
 
@@ -33,6 +53,24 @@
     padding: 0 475px;
   }
 }
+
+/* workWithUs */
+@media(min-width: 576px) {
+  .inf__text {
+    text-align: center;
+  }
+}
+
+@media(min-width: 1920px) {
+  .inf__title {
+    font-size: 41px;
+  }
+
+  .inf__text {
+    font-size: 24px;
+  }
+}
+
 
 /* FAQ */
 @media(min-width: 1600px) {
