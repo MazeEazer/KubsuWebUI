@@ -14,7 +14,7 @@
   }
 
   .container2 {
-    padding: 0 225px;
+    padding: 0 150px;
   }
 }
 
@@ -24,7 +24,7 @@
   }
 
   .container2 {
-    padding: 0 300px;
+    padding: 0 200px;
   }
 }
 
@@ -34,7 +34,7 @@
   }
 
   .container2 {
-    padding: 0 400px;
+    padding: 0 300px;
   }
 }
 
@@ -44,7 +44,7 @@
   }
 
   .container2 {
-    padding: 0 600px;
+    padding: 0 400px;
   }
 }
 
@@ -93,5 +93,113 @@
 
   .fixnum {
     left: -21px;
+  }
+}
+
+
+/* footer */
+@media(min-width: 768px) {
+  .footer {
+    background: linear-gradient(254.72deg, rgba(255, 255, 255, 0.276) -114.85%, rgba(255, 255, 255, 0) 69.04%), url("../img/D-flying.svg") no-repeat top center/100% 13%, url("../img/D.png") no-repeat bottom right/24% 7%, #040613;
+  }
+}
+
+@media(min-width: 828px) {
+  .line {
+    bottom: 179px;
+  }
+}
+
+@media(min-width: 992px) {
+  .footer {
+    background: linear-gradient(254.72deg, rgba(255, 255, 255, 0.276) -114.85%, rgba(255, 255, 255, 0) 69.04%), url("../img/D-flying.svg") no-repeat top center/100% 13%, url("../img/D.png") no-repeat bottom right/20% 10%, #040613;
+  }
+}
+
+@media(min-width: 1200px) {
+  .footer__top {
+    flex-direction: row;
+    gap: 10%;
+  }
+
+  .footer__title {
+    margin: 0;
+    margin-bottom: 20px;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .footer__text {
+    margin-bottom: 130px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@media(min-width: 1600px) {
+  .footer {
+    background: linear-gradient(254.72deg, rgba(255, 255, 255, 0.276) -114.85%, rgba(255, 255, 255, 0) 69.04%), url("../img/D-flying.svg") no-repeat top center/100% 28%, url("../img/D.png") no-repeat bottom right/25% 27%, #040613;
+  }
+
+  .footer__title {
+    font-size: 42px;
+    line-height: 51.2px;
+    max-width: 75%;
+  }
+
+  .footer__text {
+    max-width: 75%;
+    margin-bottom: 200px;
+  }
+}
+
+@media(min-width: 1920px) {
+  .feedback {
+    max-width: 45%;
+  }
+
+  .footer__title {
+    font-size: 51px;
+    line-height: normal;
+  }
+
+  .footer__text {
+    margin-bottom: 150px;
+    font-size: 26px;
+    line-height: 28px;
+  }
+
+  .mail {
+    font-size: 26px;
+  }
+
+  .input {
+    font-size: 22px;
+  }
+
+  .form__textarea {
+    font-size: 22px;
+  }
+
+  .form__check {
+    font-size: 23px;
+    line-height: 21px;
+  }
+
+  .rc-anchor-checkbox-label {
+    font-size: 18px;
+  }
+
+  .footer__btn {
+    font-size: 22px;
+  }
+
+  .line {
+    bottom: 183px;
+  }
+
+  .footer__ps {
+    font-size: 23px;
+    line-height: 22px;
   }
 }

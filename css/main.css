@@ -123,6 +123,8 @@ img {
 }
 
 .inf__text {
+  margin: 0 auto;
+  max-width: 60%;
   color: var(--grey-color);
 }
 
@@ -175,4 +177,183 @@ img {
 
 .fixnum {
   left: -17px;
+}
+
+
+/* footer */
+.footer {
+  position: relative;
+  background: linear-gradient(254.72deg, rgba(255, 255, 255, 0.276) -114.85%, rgba(255, 255, 255, 0) 69.04%), url("../img/D-flying.svg") no-repeat top center/100% 13%, url("../img/D.png") no-repeat bottom right/30% 5%, #040613;
+}
+
+.footer__top {
+  padding-top: 30px;
+  flex-direction: column;
+}
+
+.footer__title {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  max-width: 70%;
+  font-family: Montserrat;
+  font-size: 28px;
+  text-align: center;
+  color: var(--white-color);
+}
+
+.footer__text {
+  margin-bottom: 20px;
+  font-family: Montserrat;
+  font-size: 17px;
+  line-height: 22px;
+  color: var(--white-color);
+}
+
+.phone {
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.e-mail {
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.footer__svg {
+  margin-right: 10px;
+}
+
+.tele {
+  font-family: Montserrat;
+  font-size: 32px;
+  line-height: 48px;
+  color: var(--white-color);
+}
+
+.mail {
+  font-family: Montserrat;
+  font-size: 18px;
+  line-height: 27px;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  color: var(--white-color);
+}
+
+.footer__form {
+  margin-bottom: 50px;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input {
+  margin-bottom: 5px;
+  background: 0 0;
+  font-family: Montserrat;
+  font-size: 15px;
+  line-height: 1.2;
+  color: var(--white-color);
+  padding: 18px 26px;
+  border: 2px solid rgba(256, 256, 256, 0.3);
+  border-radius: 5px;
+}
+
+.form__textarea {
+  margin-bottom: 10px;
+  background: 0 0;
+  font-size: 15px;
+  min-height: 150px;
+  color: var(--white-color);
+  padding: 26px 24px;
+  border: 1px solid rgba(256, 256, 256, 0.3);
+  border-radius: 5px;
+}
+
+.form__check {
+  margin-bottom: 10px;
+  font-family: Montserrat;
+  font-size: 15px;
+  line-height: 17px;
+  color: var(--white-color);
+}
+
+.form__check input {
+  display: none;
+}
+
+.form__check > div {
+  width: 25px;
+  height: 25px;
+  border: 2px solid rgba(256, 256, 256, 0.5);
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  margin-right: 10px;
+}
+
+.form__check > div::before {
+  content: "✔️";
+  display: none;
+}
+
+.form__check input:checked + div::before {
+  display: block;
+}
+
+.form__check a {
+  color: #dd3e0e;
+}
+
+.g-recaptcha {
+  margin-bottom: 10px;
+}
+
+.footer__btn {
+  font-family: Montserrat;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 20px 14px;
+  text-align: center;
+  color: var(--white-color);
+  background-color: #f14d34;
+}
+
+.line {
+  position: absolute;
+  bottom: 200px;
+  width: 100%;
+}
+
+.footer__bottom {
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+.socials {
+  margin-bottom: 20px;
+}
+
+.link {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f14d34;
+  border-radius: 10px;
+}
+
+.link:not(:last-child) {
+  margin-right: 10px;
+}
+
+.footer__ps {
+  font-family: Montserrat;
+  font-size: 18px;
+  line-height: 20px;
+  color: var(--white-color);
 }
