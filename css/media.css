@@ -83,13 +83,32 @@
 }
 
 @media(min-width: 1200px) {
+  .tasks {
+    margin-bottom: 150px;
+  }
+
   .tasks__title {
+    margin-bottom: 40px;
     max-width: 87%;
     font-size: 44px;
   }
 
   .tasks__list {
     gap: 80px;
+  }
+}
+
+
+/* reviews */
+@media(min-width: 992px) {
+  .reviews {
+    background: url("../img/right-quote-sign.png") no-repeat top left/23% 10%;
+  }
+}
+
+@media(min-width: 1600px) {
+  .reviews {
+    background: url("../img/right-quote-sign.png") no-repeat top left/23% 26%;
   }
 }
 

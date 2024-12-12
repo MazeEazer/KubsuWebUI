@@ -160,6 +160,54 @@ img {
 }
 
 
+/* reviews */
+.reviews {
+  padding-top: 50px;
+  margin-bottom: 150px;
+  background: url("../img/right-quote-sign.png") no-repeat top left/29% 5%;
+  background-position: top 10px left -5px;
+}
+
+.reviews__title {
+  margin-bottom: 20px;
+  font-family: Montserrat;
+  font-size: 28px;
+  text-align: center;
+  color: var(--black-color);
+}
+
+.slider__img {
+  margin-bottom: 30px;
+}
+
+.slider__text {
+  margin-bottom: 20px;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.94px;
+  color: var(--black-color);
+}
+
+.reviews__ps {
+  margin-bottom: 10px;
+  font-family: Montserrat;
+  font-size: 16px;
+  line-height: 15px;
+  color: #b9b6b6;
+}
+
+.reviews__ps a {
+  color: #060a25;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+}
+
+.specnum {
+  color: var(--grey-color);
+}
+
+
 /* workWithUs */
 .workWithUs {
   margin-bottom: 70px;
