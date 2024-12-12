@@ -54,6 +54,46 @@
   }
 }
 
+/* tasks */
+@media(min-width: 768px) {
+  .tasks__list {
+    flex-direction: row;
+  }
+
+  .task__item {
+    width: calc((100% - (50 * 2)) / (2 + 1));
+  }
+
+  .task__bgimg {
+    top: 15px;
+    left: -55px;
+  }
+
+  .task__img {
+    padding-left: 0;
+  }
+
+  .task__title {
+    text-align: left;
+  }
+
+  .task__text {
+    max-width: 66%;
+  }
+}
+
+@media(min-width: 1200px) {
+  .tasks__title {
+    max-width: 87%;
+    font-size: 44px;
+  }
+
+  .tasks__list {
+    gap: 80px;
+  }
+}
+
+
 /* workWithUs */
 @media(min-width: 576px) {
   .inf__text {

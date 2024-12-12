@@ -102,7 +102,6 @@ img {
 }
 
 
-
 .video {
   position: absolute;
 }
@@ -110,6 +109,56 @@ img {
 .back__img {
   position: relative;
 }
+
+
+/* tasks */
+.tasks {
+  padding-top: 30px;
+  margin-bottom: 50px;
+}
+
+.tasks__title {
+  margin-bottom: 20px;
+  font-family: Montserrat;
+  font-size: 28px;
+  color: var(--black-color);
+}
+
+.tasks__list {
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+.task__item {
+  position: relative;
+  max-width: 40%;
+}
+
+.task__bgimg {
+  position: absolute;
+  top: 15px;
+}
+
+.task__img {
+  padding-left: 45px;
+}
+
+.task__title {
+  margin-bottom: 5px;
+  font-family: Montserrat;
+  font-size: 38px;
+  text-align: center;
+  color: var(--black-color);
+}
+
+.task__text {
+  font-family: Montserrat;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--grey-color);
+}
+
 
 /* workWithUs */
 .workWithUs {
@@ -135,9 +184,8 @@ img {
 }
 
 .faq__title {
-  margin-bottom: 25px;
-  font-size: 42px;
-  line-height: 51.2px;
+  margin-bottom: 30px;
+  font-size: 28px;
   text-align: center;
 }
 
