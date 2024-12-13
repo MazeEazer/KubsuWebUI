@@ -210,13 +210,13 @@
     margin-bottom: 50px;
   }
   .reviews {
-    background: url("../img/right-quote-sign.png") no-repeat top left/23% 10%;
+    background: url("../img/right-quote-sign.png") no-repeat top left/23% 30%;
   }
 }
 
 @media (min-width: 1600px) {
   .reviews {
-    background: url("../img/right-quote-sign.png") no-repeat top left/23% 26%;
+    background: url("../img/right-quote-sign.png") no-repeat top left/23% 60%;
   }
 }
 
@@ -364,7 +364,7 @@
   }
 
   .form__check {
-    font-size: 23px;
+    font-size: 19px;
     line-height: 21px;
   }
 

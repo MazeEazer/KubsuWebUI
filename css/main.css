@@ -329,7 +329,7 @@ img {
 .reviews {
   padding-top: 50px;
   margin-bottom: 150px;
-  background: url("../img/right-quote-sign.png") no-repeat top left/29% 5%;
+  background: url("../img/right-quote-sign.png") no-repeat top left/29% 25%;
   background-position: top 10px left -5px;
 }
 
@@ -385,6 +385,7 @@ img {
 
 .inf__text {
   margin: 0 auto;
+  margin-bottom: 20px;
   max-width: 60%;
   color: var(--grey-color);
 }
@@ -533,6 +534,7 @@ img {
 }
 
 .form__check {
+  position: relative;
   margin-bottom: 10px;
   font-family: Montserrat;
   font-size: 15px;
@@ -540,30 +542,27 @@ img {
   color: var(--white-color);
 }
 
-.form__check input {
-  display: none;
-}
-
-.form__check > div {
+.label__input {
+  appearance: none;
+  margin-right: 10px;
   width: 25px;
   height: 25px;
   border: 2px solid rgba(256, 256, 256, 0.5);
   border-radius: 5px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   float: left;
-  margin-right: 10px;
+  cursor: pointer;
 }
 
-.form__check > div::before {
-  content: "✔️";
-  display: none;
+.label__input:focus {
+  background-image: url('../img/Group\ 2.png');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.form__check input:checked + div::before {
-  display: block;
+.label__input:checked:focus {
+  background-image: url('../img/unfocused.png');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .form__check a {
