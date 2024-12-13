@@ -99,7 +99,6 @@
 }
 
 /* team */
-
 @media (min-width: 992px) {
   .img__member {
     max-width: 190px;
@@ -124,6 +123,86 @@
 }
 
 /* cases */
+@media (min-width: 992px) {
+  .cases__title {
+    font-size: 41px;
+  }
+
+  .cases__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 11px;
+  }
+
+  .case__item {
+    width: 32%;
+    min-height: 400px;
+  }
+
+  .case__item__more {
+    width: 66%;
+  }
+
+  .case__bgimg1 .case__title {
+    bottom: 50px;
+    padding-left: 20px;
+  }
+
+  .case__infbg {
+    position: absolute;
+    bottom: 30px;
+  }
+
+  .case__bgimg2 .case__title {
+    padding-left: 20px;
+  }
+
+  .case__bgimg2 .case__publ {
+    padding-left: 20px;
+  }
+
+  .case__bgimg3 .case__title {
+    padding-left: 20px;
+  }
+
+  .case__bgimg3 .case__publ {
+    padding-left: 20px;
+  }
+
+  .case__inf {
+    padding: 30px 20px 20px 20px;
+  }
+
+  .case__title {
+    max-width: 90%;
+    font-size: 17px;
+    line-height: 20px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .cases__list {
+    gap: 14px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cases__list {
+    gap: 12px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .cases__list {
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .cases__list {
+    gap: 20px;
+  }
+}
 
 /* reviews */
 @media (min-width: 992px) {

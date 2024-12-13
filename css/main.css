@@ -221,6 +221,109 @@ img {
 }
 
 /* cases */
+.cases {
+  margin-bottom: 30px;
+}
+
+.cases__title {
+  margin-bottom: 20px;
+  font-family: Montserrat;
+  font-size: 28px;
+  text-align: center;
+  color: var(--black-color);
+}
+
+.cases__list {
+  flex-direction: column;
+  gap: 20px;
+}
+
+.case__item {
+  position: relative;
+  min-height: 250px;
+}
+
+.case__img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.case__bgimg1 {
+  background: url("../img/image\ 11.1.png") no-repeat center;
+  border-radius: 5px;
+}
+
+.case__bgimg1 .case__title {
+  margin-bottom: 0;
+  position: absolute;
+  bottom: 30px;
+  padding-left: 10px;
+  color: var(--white-color);
+}
+
+.case__infbg {
+  position: absolute;
+  bottom: 10px;
+}
+
+.case__bgimg2 .case__title {
+  padding-left: 10px;
+  color: var(--white-color);
+}
+
+.case__bgimg2 .case__publ {
+  padding-left: 10px;
+}
+
+.case__bgimg3 .case__title {
+  padding-left: 10px;
+  color: var(--white-color);
+}
+
+.case__bgimg3 .case__publ {
+  padding-left: 10px;
+}
+
+.case__bgimg2 {
+  background: url("../img/image\ 7.1.png") no-repeat center;
+  border-radius: 5px;
+}
+
+.case__bgimg3 {
+  background: url("../img/image\ 8.1.png") no-repeat center;
+  border-radius: 5px;
+}
+
+.case__inf {
+  padding: 25px 10px 10px 10px;
+}
+
+.case__title {
+  margin-bottom: 5px;
+  font-family: Montserrat;
+  font-size: 18px;
+  line-height: 21.94px;
+  color: var(--black-color);
+}
+
+.case__publ {
+  font-family: Montserrat;
+  font-size: 12px;
+  line-height: 14.63px;
+  color: var(--grey-color);
+}
+
+.case__text {
+  padding-top: 15px;
+  font-family: Montserrat;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--black-color);
+}
+
+.case__text a {
+  color: rgb(41, 88, 219);
+}
 
 /* reviews */
 .reviews {
