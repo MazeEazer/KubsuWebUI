@@ -99,8 +99,40 @@
 }
 
 
+/* team */
+
+@media(min-width: 992px) {
+  .img__member {
+    max-width: 190px;
+  }
+
+  .team__list {
+    margin-bottom: 40px;
+  }
+
+  .team__item {
+    width: calc((100% - 30px) / 3);
+  }
+
+  .post__member {
+    max-width: 66%;
+    font-size: 16px;
+  }
+
+  .team__btn {
+    padding: 20px 50px;
+  }
+}
+
+
+/* cases */
+
+
 /* reviews */
 @media(min-width: 992px) {
+  .reviews__title {
+    margin-bottom: 50px;
+  }
   .reviews {
     background: url("../img/right-quote-sign.png") no-repeat top left/23% 10%;
   }

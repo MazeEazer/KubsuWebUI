@@ -160,6 +160,67 @@ img {
 }
 
 
+/* team */
+.team {
+  margin-bottom: 100px;
+}
+
+.team__title {
+  margin-bottom: 20px;
+  font-family: Montserrat;
+  font-size: 28px;
+  text-align: center;
+  color: var(--black-color);
+}
+
+.team__list {
+  margin-bottom: 20px;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.team__item {
+  width: calc((100% - 15px) / 2);
+}
+
+.img__member {
+  margin-bottom: 10px;
+  max-width: 150px;
+}
+
+.name__member {
+  margin-bottom: 10px;
+  max-width: 65%;
+  font-family: Montserrat;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 700;
+  color: var(--black-color);
+}
+
+.post__member {
+  font-family: Montserrat;
+  font-size: 14px;
+  color: var(--grey-color);
+}
+
+.btn {
+  text-align: center;
+}
+
+.team__btn {
+  padding: 10px 15px;
+  font-family: Montserrat;
+  font-size: 12px;
+  line-height: 12px;
+  border-radius: 5px;
+  border: 1px solid var(--black-color);
+}
+
+
+/* cases */
+
+
 /* reviews */
 .reviews {
   padding-top: 50px;
