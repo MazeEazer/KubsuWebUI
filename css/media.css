@@ -341,14 +341,14 @@
   }
 
   .footer__title {
-    font-size: 51px;
+    font-size: 41px;
     line-height: normal;
   }
 
   .footer__text {
     margin-bottom: 150px;
-    font-size: 26px;
-    line-height: 28px;
+    font-size: 22px;
+    line-height: 24px;
   }
 
   .mail {
@@ -356,11 +356,11 @@
   }
 
   .input {
-    font-size: 22px;
+    font-size: 19px;
   }
 
   .form__textarea {
-    font-size: 22px;
+    font-size: 19px;
   }
 
   .form__check {
