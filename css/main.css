@@ -622,12 +622,28 @@ img {
 }
 
 /* Слайдер со стрелками */
+.border__back {
+  background: url("../img/Rectangle\ 3.1.png") no-repeat;
+  background-size: 60%;
+  background-position: top 30px center;
+  border-radius: 5px;
+}
+
+.border__backback {
+  background: url("../img/Rectangle\ 3.2.png") no-repeat;
+  background-size: 50%;
+  background-position: top 20px center;
+  border-radius: 5px;
+}
+
 .slider__wrapper {
   display: flex;
   flex-direction: column;
+  margin: 0 50px;
   border: 1px solid lightgray;
   border-radius: 5px;
-  padding: 25px 20px;
+  padding: 30px 50px;
+  background-color: var(--white-color);
 }
 .slider-container {
   position: relative;

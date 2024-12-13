@@ -387,6 +387,30 @@
 }
 
 /* slider with arrows */
+@media (min-width: 400px) {
+  .border__back {
+    background-size: 70%;
+    background-position: top 20px center;
+  }
+
+  .border__backback {
+    background-size: 60%;
+    background-position: top 10px center;
+  }
+}
+
+@media (min-width: 576px) {
+  .border__back {
+    background-size: 50%;
+    background-position: top 25px center;
+  }
+
+  .border__backback {
+    background-size: 45%;
+    background-position: top 10px center;
+  }
+}
+
 @media (min-width: 992px) {
   .slider__wrapper {
     flex-direction: row;
@@ -426,5 +450,17 @@
   }
   .slider__text {
     margin-right: 20px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .border__back {
+    background-size: 45%;
+    background-position: top 20px center;
+  }
+
+  .border__backback {
+    background-size: 40%;
+    background-position: top 0 center;
   }
 }
