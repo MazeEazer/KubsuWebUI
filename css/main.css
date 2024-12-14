@@ -896,27 +896,72 @@ img {
   color: var(--white-color);
 }
 
-.label__input {
-  appearance: none;
+
+/*   background-image: url('../img/Group\ 2.png');
+ */
+ /*   background-image: url('../img/unfocused.png');
+ */
+
+ .label__input {
+  appearance: none;  /* Убираем стандартный стиль чекбокса */
   margin-right: 10px;
   width: 25px;
   height: 25px;
-  border: 2px solid rgba(256, 256, 256, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 5px;
-  float: left;
+  display: inline-block;
+  position: relative; /* Для размещения псевдоэлемента */
   cursor: pointer;
+  background-color: transparent; /* Прозрачный фон по умолчанию */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Плавные переходы */
 }
 
+/* Стили для чекбокса, когда он выбран (состояние :checked) */
+.label__input:checked {
+  background-color: #f14d34;  /* Цвет фона при checked */
+  border-color: #f14d34;      /* Цвет границы при checked */
+}
+
+/* Псевдоэлемент для отображения галочки, когда чекбокс выбран */
+.label__input:checked::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  width: 15px;
+  height: 15px;
+  background: url('../img/Group\ 2.png') no-repeat center center;
+  background-size: contain;
+}
+
+/* Псевдоэлемент для отображения пустого чекбокса, когда не выбран */
+.label__input::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  background: url('../img/unfocused.png') no-repeat center center;
+  background-size: contain;
+}
+
+/* Стиль для фокуса на чекбоксе, без изменений фона */
 .label__input:focus {
-  background-image: url('../img/Group\ 2.png');
-  background-repeat: no-repeat;
-  background-position: center;
+  outline: none;  /* Убираем стандартную обводку */
+  border-color: #f14d34;  /* Цвет границы при фокусе */
 }
 
+/* Для состояния чекбокса, когда он выбран и в фокусе */
 .label__input:checked:focus {
-  background-image: url('../img/unfocused.png');
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: #f14d34; /* Цвет фона при фокусе и выбранном чекбоксе */
+  border-color: #f14d34;     /* Цвет границы при фокусе */
+  box-shadow: 0 0 5px rgba(255, 79, 52, 0.6); /* Легкая тень при фокусе */
+}
+
+/* Для невыбранного чекбокса (в нормальном состоянии) */
+.label__input:not(:checked):focus {
+  border-color: #f14d34;  /* Граница при фокусе, если чекбокс не выбран */
 }
 
 .form__check a {
@@ -973,4 +1018,7 @@ img {
   font-size: 18px;
   line-height: 20px;
   color: var(--white-color);
+}
+#success-message, #error-message{
+  margin-top: 10px;
 }

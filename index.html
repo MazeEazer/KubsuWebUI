@@ -1075,7 +1075,7 @@
             placeholder="Ваш комментарий"
           ></textarea>
           <label class="form__check">
-            <input class="label__input" type="checkbox" checked required />
+            <input class="label__input" type="checkbox"  required />
             Отправляя заявку, я&nbsp;даю согласие на
             <a href="#">обработку своих персональных данных.*</a>
           </label>
@@ -1086,6 +1086,9 @@
           <button class="footer__btn btn__reset" type="submit">
             СВЯЖИТЕСЬ С НАМИ
           </button>
+            <div id="success-message" style="display:none; color: green;">Спасибо за вашу заявку! Мы свяжемся с вами в ближайшее время.</div>
+  <div id="error-message" style="display:none; color: red;">Произошла ошибка при отправке формы. Пожалуйста, попробуйте снова.</div>
+
         </form>
       </div>
     </div>
