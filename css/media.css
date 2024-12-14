@@ -508,3 +508,23 @@
     background-position: top 0 center;
   }
 }
+/* wide slider */
+@media (min-width: 768px) {
+  .image-slider__slide {
+    width: 180px;
+  }
+  
+  .image-slider__image {
+    height: 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .image-slider__slide {
+    width: 220px;
+  }
+  
+  .image-slider__image {
+    height: 120px;
+  }
+}
