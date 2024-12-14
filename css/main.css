@@ -161,6 +161,97 @@ img {
 }
 
 
+/* support */
+.support__title {
+  margin-bottom: 30px;
+  font-family: Montserrat;
+  font-size: 28px;
+  text-align: center;
+  color: var(--black-color);
+}
+
+.support__list {
+  flex-direction: column;
+  position: relative;
+  gap: 10px;
+  z-index: 2;
+}
+
+.support__item {
+  position: relative;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.sup__content {
+  padding: 20px 30px 50px 20px;
+}
+
+.sup__num {
+  display: block;
+  margin-bottom: 10px;
+  font-family: Montserrat;
+  font-size: 12px;
+  line-height: 14.63px;
+  color: var(--grey-color);
+}
+
+.sup__title {
+  margin-bottom: 10px;
+  font-family: Montserrat;
+  font-size: 18px;
+  line-height: 21.94px;
+  color: var(--black-color);
+}
+
+.support__inf {
+  line-height: 22px;
+  color: var(--grey-color);
+}
+
+.sup1 {
+  background: url("../img/support1.svg") no-repeat bottom right;
+}
+
+.sup2 {
+  background: url("../img/support2.svg") no-repeat bottom right;
+}
+
+.sup3 {
+  background: url("../img/support3.svg") no-repeat bottom right;
+}
+
+.sup4 {
+  background: url("../img/support4.svg") no-repeat bottom right;
+}
+
+.sup5 {
+  background: url("../img/support5.svg") no-repeat bottom right, var(--white-color);
+}
+
+.sup6 {
+  background: url("../img/support6.svg") no-repeat bottom right, var(--white-color);
+}
+
+.sup7 {
+  background: url("../img/support7.svg") no-repeat bottom right, var(--white-color);
+}
+
+.sup8 {
+  background: url("../img/support8.svg") no-repeat bottom right, var(--white-color);
+}
+
+
+/* drupal */
+.drupal {
+  background: #171634;
+  position: relative;
+  margin-top: -160px;
+  z-index: 0;
+  padding-top: 50px;
+}
+
+
 /* tasks */
 .tasks {
   padding-top: 30px;

@@ -95,6 +95,29 @@
   }
 }
 
+/* support */
+@media (min-width: 992px) {
+  .support__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .support__item {
+    width: calc((100% - 10px) / 2);
+  }
+}
+
+@media (min-width: 1400px) {
+  .support__item {
+    width: calc((100% - 20px) / 3);
+  }
+}
+
+@media (min-width: 1800px) {
+  .support__item {
+    width: calc((100% - 30px) / 4);
+  }
+}
 
 /* tasks */
 @media (min-width: 768px) {
