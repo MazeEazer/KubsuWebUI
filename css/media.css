@@ -390,7 +390,7 @@
 @media (min-width: 400px) {
   .slider__wrapper{
     margin: 0 50px;
-
+    padding: 30px 50px;
   }  
   .slider__next {
     margin-left: 5px;
@@ -431,6 +431,7 @@
   }
   .slider__wrapper{
     padding: 30px 32px;
+    margin: 0 10px;
   }
   .slider__next {
     margin-left: 0px;

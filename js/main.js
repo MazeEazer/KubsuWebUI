@@ -39,16 +39,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
   document.querySelector(".slider__next").addEventListener("click", () => {
     nextSlide();
     stopAutoSlide();
-    startAutoSlide();
+   // startAutoSlide();
   });
 
   document.querySelector(".slider__prev").addEventListener("click", () => {
     prevSlide();
     stopAutoSlide();
-    startAutoSlide();
+   // startAutoSlide();
   });
 
-  startAutoSlide();
+  //startAutoSlide();
 
   showSlide(currentIndex);
 });
