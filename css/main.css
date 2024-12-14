@@ -180,6 +180,7 @@ img {
 .support__item {
   position: relative;
   width: 100%;
+  border: 1px solid #f7f7f7;
   border-radius: 5px;
 }
 
