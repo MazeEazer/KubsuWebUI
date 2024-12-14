@@ -639,10 +639,10 @@ img {
 .slider__wrapper {
   display: flex;
   flex-direction: column;
-  margin: 0 50px;
+  margin: 0 6px;
   border: 1px solid lightgray;
   border-radius: 5px;
-  padding: 30px 50px;
+  padding: 27px 7px;
   background-color: var(--white-color);
 }
 .slider-container {
@@ -695,6 +695,8 @@ img {
 .slider__text-link {
   color: var(--black-color);
   margin: 0;
+  word-break: break-all; 
+
 }
 .slider-navigation {
   position: relative;
@@ -733,6 +735,6 @@ img {
 .ednum,
 .specnum,
 .totalnum {
-  font-size: 2em;
+  font-size: 20px;
   font-family: Montserrat, sans-serif;
 }

@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
   recaptcha.setAttribute("data-theme", "dark");
 
   const slides = document.querySelectorAll(".slide");
-  const totalSlides = slides.length;
   let currentIndex = 0;
   let slideInterval;
 
@@ -20,12 +19,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
   }
 
   function nextSlide() {
-    currentIndex = (currentIndex + 1) % slides.length; // Переход к следующему слайду, если достигнут конец
+    currentIndex = (currentIndex + 1) % slides.length; 
     showSlide(currentIndex);
   }
 
   function prevSlide() {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length; // Переход к предыдущему слайду
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length; 
     showSlide(currentIndex);
   }
 

@@ -388,6 +388,17 @@
 
 /* slider with arrows */
 @media (min-width: 400px) {
+  .slider__wrapper{
+    margin: 0 50px;
+
+  }  
+  .slider__next {
+    margin-left: 5px;
+  }
+  .slider__prev{
+    margin-right: 5px;
+  }
+
   .border__back {
     background-size: 70%;
     background-position: top 20px center;
@@ -400,6 +411,9 @@
 }
 
 @media (min-width: 576px) {
+  .ednum, .specnum, .totalnum {
+    font-size: 26px;
+}
   .border__back {
     background-size: 50%;
     background-position: top 25px center;
@@ -411,9 +425,23 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
+  .slider-navigation{
+    max-width: 150px;
+  }
+  .slider__wrapper{
+    padding: 30px 32px;
+  }
+  .slider__next {
+    margin-left: 0px;
+  }
+  
+  .slider__prev{
+    margin-right: 0px;
+  }
   .slider__wrapper {
     flex-direction: row;
+    
   }
   .slider-navigation {
     display: flex;
@@ -422,7 +450,7 @@
     flex-direction: row;
   }
   .counter {
-    width: 200px;
+    width: 149px;
     text-align: center;
     font-weight: 100;
   }
@@ -446,7 +474,7 @@
     transform: translateY(-50%);
     width: 1px;
     height: 100%;
-    background-color: #8b8b8b;
+    background-color:#b9b9b9;
   }
   .slider__text {
     margin-right: 20px;
@@ -454,6 +482,21 @@
 }
 
 @media (min-width: 1600px) {
+  .slider-navigation{
+    max-width: 264px;
+  }
+  .counter{
+    width: 200px;
+  }
+  .slider__wrapper{
+    padding: 30px 50px;
+  }
+  .slider__next {
+    margin-left: 20px;
+  }
+  .slider__prev{
+    margin-right: 20px;
+  }
   .border__back {
     background-size: 45%;
     background-position: top 20px center;
