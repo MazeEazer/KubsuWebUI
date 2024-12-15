@@ -148,11 +148,7 @@ if (bottomWrapper) initBottomSlider(bottomWrapper);
   feedbackForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      const checkbox = document.querySelector('.label__input');
-      if (!checkbox.checked) {
-          alert('Пожалуйста, согласитесь с обработкой персональных данных.');
-          return;
-      }
+   
    
       successMessage.style.display = 'none';
       errorMessage.style.display = 'none';

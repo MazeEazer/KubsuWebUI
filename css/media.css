@@ -6,6 +6,9 @@
   .container2 {
     padding: 0 100px;
   }
+  .container-footer{
+    padding: 0 100px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -15,6 +18,10 @@
 
   .container2 {
     padding: 0 150px;
+  }
+  .container-footer{
+    padding: 0 150px;
+
   }
 }
 
@@ -26,6 +33,8 @@
   .container2 {
     padding: 0 200px;
   }
+  .container-footer{
+padding: 0 200px;}
 }
 
 @media (min-width: 1200px) {
@@ -36,6 +45,10 @@
   .container2 {
     padding: 0 300px;
   }
+  .container-footer{
+    padding: 0 120px;
+
+  }
 }
 
 @media (min-width: 1600px) {
@@ -45,6 +58,9 @@
 
   .container2 {
     padding: 0 400px;
+  }
+  .container-footer{
+    padding: 0 120px;
   }
 }
 
@@ -125,6 +141,10 @@
 
 
 /* drupal */
+
+@media (min-width: 400px) {
+}
+
 @media (min-width: 576px) {
   .content__img {
     width: 55%;
@@ -628,7 +648,7 @@
   }
 
   .footer__title {
-    font-size: 42px;
+    font-size: 30px;
     line-height: 51.2px;
     max-width: 75%;
   }
@@ -645,13 +665,13 @@
   }
 
   .footer__title {
-    font-size: 41px;
+    font-size: 30px;
     line-height: normal;
   }
 
   .footer__text {
     margin-bottom: 150px;
-    font-size: 22px;
+    font-size: 14px;
     line-height: 24px;
   }
 
@@ -660,15 +680,15 @@
   }
 
   .input {
-    font-size: 19px;
+    font-size: 15px;
   }
 
   .form__textarea {
-    font-size: 19px;
+    font-size: 15px;
   }
 
   .form__check {
-    font-size: 19px;
+    font-size: 15px;
     line-height: 21px;
   }
 
@@ -677,7 +697,7 @@
   }
 
   .footer__btn {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   .line {
@@ -685,7 +705,6 @@
   }
 
   .footer__ps {
-    font-size: 23px;
-    line-height: 22px;
+    line-height: 17px;
   }
 }
