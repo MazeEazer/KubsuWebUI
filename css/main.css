@@ -295,6 +295,68 @@ img {
 }
 
 .special {
+  color: #f14d34;
+}
+
+
+/* tariffs */
+.tariffs {
+
+}
+
+.fon {
+
+}
+
+.tariffs__title {
+
+}
+
+.tariff__cards {
+
+}
+
+.card {
+
+}
+
+.card__header {
+
+}
+
+.tariff__title {
+
+}
+
+.card__body {
+
+}
+
+.card__list {
+
+}
+
+.card__item {
+
+}
+
+.card__footer {
+
+}
+
+.card__btn {
+
+}
+
+.tarriffs__ps {
+
+}
+
+.tariff__text {
+
+}
+
+.individ {
 
 }
 
@@ -936,27 +998,21 @@ img {
 .form__check {
   position: relative;
   margin-bottom: 10px;
+  padding-left: 40px;
   font-family: Montserrat;
   font-size: 15px;
   line-height: 17px;
   color: var(--white-color);
 }
 
-
-/*   background-image: url('../img/Group\ 2.png');
- */
- /*   background-image: url('../img/unfocused.png');
- */
-
- .label__input {
+.label__input {
   appearance: none;  /* Убираем стандартный стиль чекбокса */
-  margin-right: 10px;
   width: 25px;
   height: 25px;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 5px;
-  display: inline-block;
-  position: relative; /* Для размещения псевдоэлемента */
+  position: absolute;
+  left: 0;
   cursor: pointer;
   background-color: transparent; /* Прозрачный фон по умолчанию */
   transition: background-color 0.3s ease, border-color 0.3s ease; /* Плавные переходы */

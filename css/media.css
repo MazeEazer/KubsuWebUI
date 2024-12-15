@@ -125,10 +125,6 @@
 
 
 /* drupal */
-
-@media (min-width: 400px) {
-}
-
 @media (min-width: 576px) {
   .content__img {
     width: 55%;
@@ -229,6 +225,7 @@
 @media (min-width: 1200px) {
   .tasks {
     margin-bottom: 150px;
+    padding-top: 100px;
   }
 
   .tasks__title {
