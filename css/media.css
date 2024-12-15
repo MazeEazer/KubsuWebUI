@@ -141,10 +141,6 @@ padding: 0 200px;}
 
 
 /* drupal */
-
-@media (min-width: 400px) {
-}
-
 @media (min-width: 576px) {
   .content__img {
     width: 55%;
