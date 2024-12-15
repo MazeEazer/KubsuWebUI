@@ -306,64 +306,100 @@ img {
 
 /* tariffs */
 .tariffs {
-
+  background: url("../img/Fon.png") no-repeat top right;
+  background-size: 400%;
 }
 
 .fon {
-  background: url("../img/Fon.png") no-repeat top right;
-  background-size: cover;
+  padding-top: 100px;
+  padding-bottom: 50px;
 }
 
 .tariffs__title {
-
+  margin-bottom: 20px;
+  font-family: Montserrat;
+  font-size: 28px;
+  text-align: center;
+  color: var(--black-color);
 }
 
 .tariff__cards {
-
+  margin-bottom: 40px;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .card {
-
+  padding: 30px 20px;
+  background-color: var(--white-color);
+  border: 1px solid #ececec;
+  border-radius: 5px;
 }
 
 .card__header {
-
+  margin-bottom: 40px;
+  border-bottom: 2px solid #cfcfcf;
 }
 
 .tariff__title {
-
-}
-
-.card__body {
-
+  margin-bottom: 20px;
+  color: #f14d34;
 }
 
 .card__list {
-
+  margin-bottom: 40px;
 }
 
 .card__item {
-
+  padding-left: 30px;
+  margin-bottom: 10px;
+  position: relative;
+  font-family: Montserrat;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--black-color);
 }
 
-.card__footer {
-
+.card__item::before {
+  content: url("../img/checked.svg");
+  fill: #f69c8f;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: rgba(250, 68, 7, 0.893);
 }
 
 .card__btn {
-
-}
-
-.tarriffs__ps {
-
+  padding: 20px 30px;
+  width: 100%;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: #f14d34;
+  border: 2px solid #F14D34;
+  border-radius: 5px;
 }
 
 .tariff__text {
-
+  margin-bottom: 20px;
+  font-family: Montserrat;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  color: var(--black-color);
 }
 
 .individ {
-
+  display: block;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  color: var(--black-color);
 }
 
 
@@ -466,8 +502,7 @@ img {
 .team__btn {
   padding: 10px 15px;
   font-family: Montserrat;
-  font-size: 12px;
-  line-height: 12px;
+  font-size: 14px;
   border-radius: 5px;
   border: 1px solid var(--black-color);
 }
