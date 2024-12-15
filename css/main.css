@@ -252,6 +252,52 @@ img {
   padding-top: 50px;
 }
 
+.back__img {
+  background: url("../img/MaskGroup.png") no-repeat bottom right;
+  background-size: 140%;
+}
+
+.content__img {
+  position: absolute;
+  bottom: -60px;
+  width: 80%;
+}
+
+.content__text {
+  padding-top: 130px;
+  padding-bottom: 350px;
+}
+
+.drupal__title {
+  margin-bottom: 20px;
+  font-family: Montserrat;
+  font-size: 28px;
+  color: var(--white-color);
+}
+
+.drupal__list {
+  flex-direction: column;
+  gap: 15px;
+}
+
+.drupal__item {
+  border-left: 3px #f14d34 solid;
+  padding-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.drupal__text {
+  max-width: 60%;
+  font-family: Montserrat;
+  line-height: 22px;
+  color: var(--white-color);
+}
+
+.special {
+
+}
+
 
 /* tasks */
 .tasks {
