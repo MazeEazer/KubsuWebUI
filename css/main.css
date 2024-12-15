@@ -106,9 +106,62 @@ img {
   margin: 0 auto;
   padding: 0 15px;
 }
+
 .container-footer{
   margin: 0 auto;
   padding: 0 15px;
+
+}
+
+
+/* headermob */
+.header__mobile {
+
+}
+
+.mobile__menu {
+
+}
+
+.mob__menu {
+
+}
+
+.menu {
+
+}
+
+.mob__nav {
+
+}
+
+.nav__menu {
+
+}
+
+.menu__item {
+
+}
+
+.menu_podcat {
+
+}
+
+.podcat__item {
+
+}
+
+.mob__link {
+
+}
+
+
+/* header */
+.header {
+
+}
+
+.intro {
 
 }
 
@@ -116,9 +169,101 @@ img {
   position: absolute;
 }
 
+.video__media {
+
+}
+
 .back__img {
   position: relative;
 }
+
+.intro__content {
+  padding-top: 500px;
+  background-color: #040613;
+}
+
+.header__content {
+}
+
+.header__logo {
+
+}
+
+.header__nav {
+
+}
+
+.nav__list {
+
+}
+
+.nav__item {
+
+}
+
+.dropdown {
+
+}
+
+.dropbtn {
+
+}
+
+.dropdown__list {
+
+}
+
+.dropdown__item {
+
+}
+
+.hero__content {
+}
+
+.top-left {
+
+}
+
+.hero__title {
+  margin-bottom: 20px;
+  font-family: Montserrat;
+  font-size: 28px;
+  text-align: center;
+  color: var(--white-color);
+}
+
+.hero__text {
+  max-width: 60%;
+  font-family: Montserrat;
+  line-height: 22px;
+  text-align: center;
+  color: var(--white-color);
+}
+
+.hero__btn {
+
+}
+
+.bottom-right {
+
+}
+
+.hero__list {
+
+}
+
+.list__item {
+
+}
+
+.special__inf {
+
+}
+
+.general__inf {
+
+}
+
 
 /* advantages */
 .advantages {
