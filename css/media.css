@@ -247,7 +247,7 @@ padding: 0 200px;}
   .tasks__title {
     margin-bottom: 40px;
     max-width: 87%;
-    font-size: 44px;
+    font-size: 41px;
   }
 
   .tasks__list {
@@ -553,7 +553,7 @@ padding: 0 200px;}
   }
 
   .inf__text {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 
@@ -564,7 +564,7 @@ padding: 0 200px;}
   }
 
   .question__title {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .question__text {
