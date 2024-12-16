@@ -1,10 +1,4 @@
-$(".mob__menu").on("click", function () {
-  $(".header__mobile").toggleClass("menu__active");
-  $(".mob__nav").toggleClass("menu__active");  // Разворачиваем меню
-});
-
-
-
+/* footer */
 document.addEventListener("DOMContentLoaded", (event) => {
   const recaptcha = document.querySelector(".g-recaptcha");
   recaptcha.setAttribute("data-theme", "dark");
