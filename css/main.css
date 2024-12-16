@@ -713,12 +713,12 @@ img {
 
 }
 .card:first-child{
-  padding: 15px 25px;
+  padding: 30px 20px;
   font-size: 10px;
 }
 
-.card:nth-child(3) {
-  padding: 15px 25px;
+.card {
+  padding: 30px 20px;
   font-size: 10px;
 }
 
@@ -1500,7 +1500,7 @@ img {
   left: 3px;
   width: 15px;
   height: 15px;
-  background: url('../img/Group\ 2.png') no-repeat center center;
+  background: url('../img/Group2.png') no-repeat center center;
   background-size: contain;
 }
 
