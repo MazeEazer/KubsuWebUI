@@ -21,16 +21,11 @@
 <body>
   <header class="header">
     <div class="intro">
-      <div class="video">
-        <video
-          class="video__media"
-          src="img/video.mp4"
-          autoplay
-          muted
-          loop
-        ></video>
-      </div>
-      <img class="back__img" src="img/MaskGroup.png" />
+      <div class="video"></div>
+      <video class="video__media" autoplay muted loop>
+        <source src="img/video.mp4" type="video/mp4">
+      </video>
+      <img class="backimg" src="img/MaskGroup.png" />
       <div class="intro__content">
         <div class="container2">
           <div class="header__content flex">
@@ -52,7 +47,7 @@
                 <li class="nav__item"><a href="#" class="nav__link">РЕКЛАМА</a></li>
                 <li class="nav__item dropdown">
                   <button class="dropbtn btn__reset">О НАС</button>
-                  <ul class="dropdown__ list list__reset">
+                  <ul class="dropdown__list list__reset">
                     <li class="dropdown__item"><a href="#" class="nav__link"></a>КОМАНДА</li>
                     <li class="dropdown__item"><a href="#" class="nav__link"></a>DRUPALGIVE</li>
                     <li class="dropdown__item"><a href="#" class="nav__link"></a>БЛОГ</li>
@@ -65,7 +60,7 @@
             </nav>
           </div>
           <div class="hero__content flex">
-            <div class="top-left">
+            <div class="top-left flex">
               <h1 class="hero__title section__title">
                 Поддержка сайтов на&nbsp;Drupal
               </h1>
@@ -76,10 +71,10 @@
               <button class="hero__btn btn__reset">ТАРИФЫ</button>
             </div>
             <div class="bottom-right">
-              <ul class="hero__list list__reset">
+              <ul class="hero__list list__reset flex">
                 <li class="list__item">
-                  <span class="special__inf">#1</span>
-                  <div class="general__inf">
+                  <span class="special__inf num1">#1</span>
+                  <div class="general__inf gen1">
                     Drupal-разработчик в&nbsp;России по&nbsp;версии Рейтинга
                     Рунета
                   </div>
@@ -123,7 +118,7 @@
   <!--Меню  для мобайл-->
   <section class="header__mobile">
     <div class="mobile__menu">
-      <div class="container2">
+      <div class="mob__container flex">
         <img src="img/Group 9.png" alt="" />
         <div class="mob__menu">
           <div class="menu"></div>
@@ -133,9 +128,9 @@
     <nav class="mob__nav">
       <ul class="nav__menu list__reset">
         <li class="menu__item"><a href="#" class="mob__link"></a>ПОДДЕРЖКА DRUPAL</li>
-        <li class="menu_podcat">
+        <li class="menu__item menu__podcat">
           <span>АДМИНИСТРИРОВАНИЕ</span>
-          <ul class="list__reset">
+          <ul class="podcat__list list__reset">
             <li class="podcat__item"><a href="#" class="mob__link"></a>МИГРАЦИЯ</li>
             <li class="podcat__item"><a href="#" class="mob__link"></a>БЭКАПЫ</li>
             <li class="podcat__item"><a href="#" class="mob__link"></a>АУДИТ БЕЗОПАСНОСТИ</li>
@@ -145,9 +140,9 @@
         </li>
         <li class="menu__item"><a href="#" class="mob__link"></a>ПРОДВИЖЕНИЕ</li>
         <li class="menu__item"><a href="#" class="mob__link"></a>РЕКЛАМА</li>
-        <li class="menu_podcat">
+        <li class="menu__item menu__podcat">
           <span>О НАС</span>
-          <ul class="list__reset">
+          <ul class="podcat__list list__reset">
             <li class="podcat__item"><a href="#" class="mob__link"></a>КОМАНДА</li>
             <li class="podcat__item"><a href="#" class="mob__link"></a>DRUPALGIVE</li>
             <li class="podcat__item"><a href="#" class="mob__link"></a>БЛОГ</li>
