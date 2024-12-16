@@ -479,8 +479,13 @@ img {
   background-color: var(--white-color);
   border: 1px solid #ececec;
   border-radius: 5px;
-}
+  transition: transform 0.3s ease; 
 
+}
+.card:hover {
+  transform: scale(1.05);
+
+}
 .card__header {
   margin-bottom: 40px;
   border-bottom: 2px solid #cfcfcf;
@@ -503,8 +508,10 @@ img {
   font-size: 14px;
   line-height: 20px;
   color: var(--black-color);
+  transition: transform 0.3s ease;
 }
-
+.card__item:hover {
+  transform: scale(1.05); }
 .card__item::before {
   content: url("../img/checked.svg");
   fill: #f69c8f;
@@ -512,6 +519,7 @@ img {
   top: 0;
   left: 0;
   color: rgba(250, 68, 7, 0.893);
+  
 }
 
 .card__btn {
@@ -524,8 +532,12 @@ img {
   color: #f14d34;
   border: 2px solid #F14D34;
   border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-
+.card__btn:hover {
+  background-color: #f14d34; 
+  color: white; 
+}
 .tariff__text {
   margin-bottom: 20px;
   font-family: Montserrat;
@@ -545,6 +557,10 @@ img {
   text-decoration-line: underline;
   text-decoration-style: solid;
   color: var(--black-color);
+  transition: color 0.2s ease;
+}
+.individ:hover {
+  color:rgba(250, 68, 7, 0.893)
 }
 
 
@@ -570,8 +586,11 @@ img {
 .task__item {
   position: relative;
   max-width: 40%;
+  transition: transform 0.3s ease;
 }
-
+.task__item:hover {
+  transform: scale(1.05); 
+}
 .task__bgimg {
   position: absolute;
   top: 15px;
@@ -650,8 +669,19 @@ img {
   font-size: 14px;
   border-radius: 5px;
   border: 1px solid var(--black-color);
+  background-color: white;
+  color: black; 
+  transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
+.team__btn:hover {
+  background-color: black;
+  color: white; 
+}
+
+.team__btn:hover {
+  color: #fff; 
+}
 /* cases */
 .cases {
   margin-bottom: 30px;
@@ -673,6 +703,11 @@ img {
 .case__item {
   position: relative;
   min-height: 250px;
+  transition: transform 0.3s ease; 
+}
+
+.case__item:hover {
+  transform: scale(1.05); 
 }
 
 .case__img {
@@ -1134,6 +1169,15 @@ img {
 
 .footer__svg {
   margin-right: 10px;
+  transition:  fill 0.3s ease; 
+}
+.footer__svg path {
+  fill: rgba(255, 255, 255, 0.5); 
+  transition: fill 0.3s ease; 
+}
+
+.footer__svg:hover path {
+  fill: #f14d34
 }
 
 .tele {
@@ -1150,6 +1194,14 @@ img {
   text-decoration-line: underline;
   text-decoration-style: solid;
   color: var(--white-color);
+  transition: color 0.3s ease; 
+}
+.mail:hover {
+  color: #f14d34;
+}
+.tele:hover {
+  color: #f14d34;
+
 }
 
 .footer__form {
@@ -1160,27 +1212,33 @@ img {
 
 .input {
   margin-bottom: 5px;
-  background: 0 0;
-  font-family: Montserrat;
+  background: transparent;
+    font-family: Montserrat;
   font-size: 15px;
   line-height: 1.2;
   color: var(--white-color);
   padding: 18px 26px;
   border: 2px solid rgba(256, 256, 256, 0.3);
   border-radius: 5px;
+  transition: border-color 0.3s ease; 
 }
-
+.input:hover {
+  border-color: #f14d34; 
+}
 .form__textarea {
   margin-bottom: 10px;
-  background: 0 0;
+  background: transparent; 
   font-size: 15px;
   min-height: 150px;
   color: var(--white-color);
   padding: 26px 24px;
   border: 1px solid rgba(256, 256, 256, 0.3);
   border-radius: 5px;
+  transition: border-color 0.3s ease; 
 }
-
+.form__textarea:hover {
+  border-color: #f14d34; 
+}
 .form__check {
   position: relative;
   margin-bottom: 10px;
@@ -1192,7 +1250,7 @@ img {
 }
 
 .label__input {
-  appearance: none;  /* Убираем стандартный стиль чекбокса */
+  appearance: none;  
   width: 25px;
   height: 25px;
   border: 2px solid rgba(255, 255, 255, 0.5);
@@ -1200,17 +1258,17 @@ img {
   position: absolute;
   left: 0;
   cursor: pointer;
-  background-color: transparent; /* Прозрачный фон по умолчанию */
-  transition: background-color 0.3s ease, border-color 0.3s ease; /* Плавные переходы */
+  background-color: transparent; 
+  transition: background-color 0.3s ease, border-color 0.3s ease; 
 }
 
-/* Стили для чекбокса, когда он выбран (состояние :checked) */
 .label__input:checked {
-  background-color: #f14d34;  /* Цвет фона при checked */
-  border-color: #f14d34;      /* Цвет границы при checked */
+  background-color: #f14d34; 
+  border-color: #f14d34;     
 }
-
-/* Псевдоэлемент для отображения галочки, когда чекбокс выбран */
+.label__input:hover {
+  border-color: #f14d34;
+}
 .label__input:checked::before {
   content: "";
   position: absolute;
@@ -1222,7 +1280,6 @@ img {
   background-size: contain;
 }
 
-/* Псевдоэлемент для отображения пустого чекбокса, когда не выбран */
 .label__input::before {
   content: "";
   position: absolute;
@@ -1234,22 +1291,19 @@ img {
   background-size: contain;
 }
 
-/* Стиль для фокуса на чекбоксе, без изменений фона */
 .label__input:focus {
-  outline: none;  /* Убираем стандартную обводку */
-  border-color: #f14d34;  /* Цвет границы при фокусе */
+  outline: none; 
+  border-color: #f14d34; 
 }
 
-/* Для состояния чекбокса, когда он выбран и в фокусе */
 .label__input:checked:focus {
-  background-color: #f14d34; /* Цвет фона при фокусе и выбранном чекбоксе */
-  border-color: #f14d34;     /* Цвет границы при фокусе */
-  box-shadow: 0 0 5px rgba(255, 79, 52, 0.6); /* Легкая тень при фокусе */
+  background-color: #f14d34; 
+  border-color: #f14d34;    
+  box-shadow: 0 0 5px rgba(255, 79, 52, 0.6);
 }
 
-/* Для невыбранного чекбокса (в нормальном состоянии) */
 .label__input:not(:checked):focus {
-  border-color: #f14d34;  /* Граница при фокусе, если чекбокс не выбран */
+  border-color: #f14d34; 
 }
 
 .form__check a {
@@ -1261,6 +1315,7 @@ img {
 }
 
 .footer__btn {
+  
   font-family: Montserrat;
   font-size: 12px;
   letter-spacing: 0.06em;
@@ -1270,6 +1325,12 @@ img {
   text-align: center;
   color: var(--white-color);
   background-color: #f14d34;
+  border: 1px solid #f14d34;
+
+  transition: background-color 0.3s ease, border 0.3s ease ; 
+}
+.footer__btn:hover {
+  background-color: rgba(241, 77, 52, 0);
 }
 
 .line {
@@ -1295,8 +1356,13 @@ img {
   justify-content: center;
   background: #f14d34;
   border-radius: 10px;
-}
+    border: 1px solid #f14d34;
 
+  transition: background-color 0.3s ease;
+}
+.link:hover {
+  background-color: rgba(241, 77, 52, 0);
+}
 .link:not(:last-child) {
   margin-right: 10px;
 }
