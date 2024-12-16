@@ -15,6 +15,7 @@
   .mobile__menu{
     display: none;
   }
+
   .container {
     padding: 0 150px;
   }
@@ -25,6 +26,12 @@
   .container-footer{
     padding: 0 150px;
 
+  }
+}
+
+@media (max-width:767px) {
+  .header__content {
+    display: none;
   }
 }
 
