@@ -107,12 +107,6 @@ img {
   padding: 0 15px;
 }
 
-.container-footer{
-  margin: 0 auto;
-  padding: 0 15px;
-
-}
-
 
 /* headermob */
 .mobile__menu {
@@ -233,11 +227,11 @@ img {
 }
 
 .nav-link:hover{
-  color:  #f14d34;
+  color: #f14d34;
 }
 
 .submenu-trigger:hover{
-  color:    #f14d34;
+  color: #f14d34;
 }
 
 .submenu-trigger {
@@ -294,10 +288,6 @@ img {
 
 
 /* header */
-.header {
-
-}
-
 .intro {
   position: relative;
   padding-bottom: 80px;
@@ -327,51 +317,12 @@ img {
   z-index: 3;
 }
 
-.intro__content {
-
-}
-
-.header__content {
-}
-
-.header__logo {
-
-}
-
-.header__nav {
-
-}
-
-.nav__list {
-
-}
-
-.nav__item {
-
-}
-
-.dropdown {
-
-}
-
-.dropbtn {
-
-}
-
-.dropdown__list {
-
-}
-
-.dropdown__item {
-
-}
-
 .hero__content {
   flex-direction: column;
+  gap: 100px;
 }
 
 .top-left {
-  margin-bottom: 100px;
   flex-direction: column;
   align-items: center;
 }
@@ -423,6 +374,7 @@ img {
   z-index: 5;
   width: calc((100% - 20px) / 2);
   padding-left: 10px;
+  padding-bottom: 5px;
   border-left: 3px #f14d34 solid;
 }
 
@@ -451,7 +403,6 @@ img {
 .num1:after {
   content: url("../img/cup.png");
   position: relative;
-  height: 80px;
   right: 0;
   top: 0;
 }
