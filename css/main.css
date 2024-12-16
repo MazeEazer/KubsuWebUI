@@ -114,8 +114,6 @@ img {
 }
 
 
-
-
 /* headermob */
 .mobile__menu {
   position: fixed;
@@ -157,11 +155,13 @@ img {
   position: relative;
   transition: 0.1s;
 }
+
 .menu:before {
   content: "";
   position: absolute;
   top: -6px;
 }
+
 .menu:after {
   content: "";
   position: absolute;
@@ -171,6 +171,7 @@ img {
 .menu__active .mobile__menu {
   display: flex;
 }
+
 .burger-btn {
   display: flex;
   flex-direction: column;
@@ -230,15 +231,15 @@ img {
   padding: 0.8rem 0;
   transition: color 0.3s ease;
 }
+
 .nav-link:hover{
   color:  #f14d34;
-
 }
+
 .submenu-trigger:hover{
   color:    #f14d34;
-
-
 }
+
 .submenu-trigger {
   display: flex;
   justify-content: space-between;
@@ -274,9 +275,9 @@ img {
   font-size: 0.8rem;
 }
 .submenu .nav-link:hover{
-  color:    #f14d34;
-
+  color: #f14d34;
 }
+
 /* Scrollbar Styling */
 .mobile-nav::-webkit-scrollbar {
   width: 6px;
@@ -290,71 +291,6 @@ img {
   background: #333;
   border-radius: 3px;
 }
-
-
-/* .mob__nav {
-
-  z-index: 10;
-  position: fixed;
-  left: 0;
-  bottom: 70%; 
-  width: 100vw;
-  background: #000;
-  font-size: 12px;
-  transition: bottom 0.5s ease-in-out;
-} */
-
-/* .menu__active .mob__nav {
-  bottom: 35px;  
-}
- */
-/* .nav__menu {
-  padding-left: 0;
-  margin: 0;
-  color: #fff;
-  border-bottom: 1px #fff solid;
-  max-height: calc(100vh - 35px);
-  overflow: auto;
-}
-
-.menu__item {
-  list-style-type: none;
-  border-top: 1px #333 solid;
-  padding: 9px 20px;
-  padding-right: 0;
-  opacity: 0.8;
-}
-
-.menu__podcat {
-  padding-bottom: 0;
-}
-
-.menu__podcat span {
-  position: relative;
-  opacity: 0.8;
-}
-
-.menu__podcat span:after {
-  content: "\25BC";
-  position: absolute;
-  top: -2px;
-  right: -14px;
-}
-
-.podcat__list {
-  margin-left: -20px;
-  width: calc(100% + 20px);
-  margin-top: 8px;
-}
-
-.podcat__item {
-  padding-left: 40px;
-}
-
-.mob__link {
-  color: #fff;
-  text-decoration: none;
-} */
 
 
 /* header */
@@ -806,34 +742,34 @@ img {
   border: 2px solid #F14D34;
 }
 
- 
+
 .card__btn:hover {
   background-color: #f14d34;
   color: white;
 }
 .card__btn-alt{
-  background-color: #f14d34; 
-  color: white; 
+  background-color: #f14d34;
+  color: white;
 }
 .card__btn-alt:hover {
   color: #F14D34;
   border: 2px solid #F14D34;
-  background-color: white; 
+  background-color: white;
 
 }
 .card:first-child{
-  padding: 15px 25px; 
-  font-size: 10px; 
+  padding: 15px 25px;
+  font-size: 10px;
 }
 
 .card:nth-child(3) {
   padding: 15px 25px;
-  font-size: 10px; 
+  font-size: 10px;
 }
 
 .card.main-card {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-  z-index: 2; 
+  z-index: 2;
 }
 .card:not(.main-card) {
   position: relative;
@@ -1239,7 +1175,7 @@ img {
   text-align: center;
   transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
   transform: translateX(100%);
-  opacity: 0; 
+  opacity: 0;
   width: 100%; /* Блок слайда будет иметь ширину 100% */
   height: auto;
 }
@@ -1251,7 +1187,7 @@ img {
 
 .slideOutLeft {
   opacity: 0;
-  transform: translateX(-100%) scale(0.9); 
+  transform: translateX(-100%) scale(0.9);
 }
 
 .slideInRight {
@@ -1261,7 +1197,7 @@ img {
 
 .slideOutRight {
   opacity: 0;
-  transform: translateX(100%) scale(0.9); 
+  transform: translateX(100%) scale(0.9);
 }
 .slideInLeft {
   opacity: 1;
@@ -1280,7 +1216,7 @@ img {
   transition: transform 0.5s ease-in-out;
 }
 .slide.active .slider__img {
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 .horizontal-line {
   width: 100%;
