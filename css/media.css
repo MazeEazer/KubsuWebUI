@@ -117,6 +117,7 @@
   }
 
   .header__logo {
+    margin-right: 20px;
     height: 20px;
     z-index: 5;
   }
@@ -130,36 +131,38 @@
     gap: 5px;
   }
 
-  .nav__item {
-    /* width: calc((100% - 15px) / 4); */
+  .nav__item:first-child {
+    border-bottom: 2px solid #f14d34;
   }
 
   .nav__link {
     font-family: Montserrat;
     font-size: 10px;
-    letter-spacing: 0.06em;
     color: #fff;
-  }
-
-  .dropdown {
-
   }
 
   .dropbtn {
     font-family: Montserrat;
     font-size: 10px;
-    letter-spacing: 0.06em;
     color: #fff;
   }
 
   .dropdown__list {
+    display: none;
+    position: fixed;
+    background-color: #f14d34;
+    min-width: 160px;
+    cursor: pointer;
+  }
 
+  .dropbtn:focus + .dropdown__list {
+    display: block;
   }
 
   .dropdown__item {
+    padding: 12px 16px;
     font-family: Montserrat;
     font-size: 10px;
-    letter-spacing: 0.06em;
     color: #fff;
   }
 
@@ -224,9 +227,45 @@
   .hero__btn {
     padding: 20px 60px;
   }
+
+  .nav__list {
+    gap: 9px;
+  }
+
+  .nav__link {
+    font-size: 11px;
+  }
+
+  .dropbtn {
+    font-size: 11px;
+  }
+
+  .dropdown__item {
+    font-size: 11px;
+  }
 }
 
 @media (min-width: 1600px) {
+  .header__logo {
+    margin-right: 40px;
+  }
+
+  .nav__list {
+    gap: 20px;
+  }
+
+  .nav__link {
+    font-size: 12px;
+  }
+
+  .dropbtn {
+    font-size: 12px;
+  }
+
+  .dropdown__item {
+    font-size: 12px;
+  }
+
   .backimg {
     max-width: 60%;
   }
