@@ -358,8 +358,11 @@ img {
   border: 2px solid #F14D34;
   border-radius: 5px;
   z-index: 5;
+  transition: 0.3s background-color ease;
 }
-
+.hero__btn:hover {
+  background-color: #F14D34; /* Оранжевый цвет при наведении */
+}
 .bottom-right {
 
 }
