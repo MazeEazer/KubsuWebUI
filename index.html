@@ -120,43 +120,47 @@
     <div class="mobile__menu">
       <div class="mob__container flex">
         <img src="img/Group 9.png" alt="" />
-        <div class="mob__menu">
-          <div class="menu"></div>
-        </div>
-      </div>
+        <button class="burger-btn" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+      </button>
+</div>
     </div>
-    <nav class="mob__nav">
-      <ul class="nav__menu list__reset">
-        <li class="menu__item"><a href="#" class="mob__link"></a>ПОДДЕРЖКА DRUPAL</li>
-        <li class="menu__item menu__podcat">
-          <span>АДМИНИСТРИРОВАНИЕ</span>
-          <ul class="podcat__list list__reset">
-            <li class="podcat__item"><a href="#" class="mob__link"></a>МИГРАЦИЯ</li>
-            <li class="podcat__item"><a href="#" class="mob__link"></a>БЭКАПЫ</li>
-            <li class="podcat__item"><a href="#" class="mob__link"></a>АУДИТ БЕЗОПАСНОСТИ</li>
-            <li class="podcat__item"><a href="#" class="mob__link"></a>ОПТИМИЗАЦИЯ СКОРОСТИ</li>
-            <li class="podcat__item"><a href="#" class="mob__link"></a>ПЕРЕЕЗД НА&nbsp;HTTPS</li>
-          </ul>
-        </li>
-        <li class="menu__item"><a href="#" class="mob__link"></a>ПРОДВИЖЕНИЕ</li>
-        <li class="menu__item"><a href="#" class="mob__link"></a>РЕКЛАМА</li>
-        <li class="menu__item menu__podcat">
-          <span>О НАС</span>
-          <ul class="podcat__list list__reset">
-            <li class="podcat__item"><a href="#" class="mob__link"></a>КОМАНДА</li>
-            <li class="podcat__item"><a href="#" class="mob__link"></a>DRUPALGIVE</li>
-            <li class="podcat__item"><a href="#" class="mob__link"></a>БЛОГ</li>
-            <li class="podcat__item"><a href="#" class="mob__link"></a>КУРСЫ DRUPAL</li>
-          </ul>
-        </li>
-        <li class="menu__item"><a href="#" class="mob__link"></a>ПРОЕКТЫ</li>
-        <li class="menu__item"><a href="#" class="mob__link"></a>КОНТАКТЫ</li>
+    <nav class="mobile-nav">
+      <ul class="nav-menu">
+          <li class="menu-item"><a href="#advantages" class="nav-link">ПОДДЕРЖКА DRUPAL</a></li>
+          <li class="menu-item has-submenu">
+              <span class="submenu-trigger">АДМИНИСТРИРОВАНИЕ</span>
+              <ul class="submenu">
+                  <li class="menu-item"><a href="#advantages" class="nav-link">МИГРАЦИЯ</a></li>
+                  <li class="menu-item"><a href="#advantages" class="nav-link">БЭКАПЫ</a></li>
+                  <li class="menu-item"><a href="#advantages" class="nav-link">АУДИТ БЕЗОПАСНОСТИ</a></li>
+                  <li class="menu-item"><a href="#advantages" class="nav-link">ОПТИМИЗАЦИЯ СКОРОСТИ</a></li>
+                  <li class="menu-item"><a href="#advantages" class="nav-link">ПЕРЕЕЗД НА HTTPS</a></li>
+              </ul>
+          </li>
+          <li class="menu-item"><a href="#" class="nav-link">ПРОДВИЖЕНИЕ</a></li>
+          <li class="menu-item"><a href="#" class="nav-link">РЕКЛАМА</a></li>
+          <li class="menu-item has-submenu">
+              <span class="submenu-trigger">О НАС</span>
+              <ul class="submenu">
+                  <li class="menu-item"><a href="#team" class="nav-link">КОМАНДА</a></li>
+                  <li class="menu-item"><a href="#" class="nav-link">DRUPALGIVE</a></li>
+                  <li class="menu-item"><a href="#blog" class="nav-link">БЛОГ</a></li>
+                  <li class="menu-item"><a href="#" class="nav-link">КУРСЫ DRUPAL</a></li>
+              </ul>
+          </li>
+          <li class="menu-item"><a href="#blog" class="nav-link">ПРОЕКТЫ</a></li>
+          <li class="menu-item"><a href="#contacts" class="nav-link">КОНТАКТЫ</a></li>
       </ul>
-    </nav>
-  </section>
+  </nav>
+
+
+</section>
 
   <main class="main">
-    <section class="advantages">
+    <section id="advantages" class="advantages">
       <div class="container2">
         <h2 class="advantages__title section__title">
           13&nbsp;лет совершенствуем компетенции в&nbsp;Друпал поддержке!
@@ -520,7 +524,7 @@
       </div>
     </section>
 
-    <section class="team">
+    <section id="team" class="team">
       <div class="container">
         <h2 class="team__title section title">Команда</h2>
         <ul class="team__list list__reset flex">
@@ -570,7 +574,7 @@
 
     <section class="cases">
       <div class="container2">
-        <h2 class="cases__title section__title">Последние кейсы</h2>
+        <h2 id="blog" class="cases__title section__title">Последние кейсы</h2>
         <ul class="cases__list list__reset flex">
           <li class="case__item">
             <img class="case__img" src="img/image 9.2.png" alt="картинка" />
@@ -957,7 +961,7 @@
     </section>
   </main>
 
-  <footer class="footer">
+  <footer id="contacts" class="footer">
     <div class="container2">
       <div class="footer__top flex">
         <div class="feedback">
