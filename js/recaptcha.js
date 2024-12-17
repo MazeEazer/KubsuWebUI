@@ -1,7 +1,7 @@
-export function setRecaptchaTheme() {
-	const recaptcha = document.querySelector(".g-recaptcha");
-	if (recaptcha) {
-	  recaptcha.setAttribute("data-theme", "dark");
+/* export function setRecaptchaTheme() {
+	function onSubmit(token) {
+		document.getElementById("demo-form").submit();
+	  }
+	
 	}
-}
-
+ */
