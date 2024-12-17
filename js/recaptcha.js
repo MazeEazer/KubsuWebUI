@@ -3,6 +3,5 @@ export function setRecaptchaTheme() {
 	if (recaptcha) {
 	  recaptcha.setAttribute("data-theme", "dark");
 	}
-  }
-  
-  
+}
+
