@@ -2,10 +2,10 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import { Autoplay } from "swiper/modules"
 import "swiper/css"
 import "swiper/css/autoplay"
-import img1 from "../../img/Росатом.png"
-import img2 from "../../img/ВТБ.png"
-import img3 from "../../img/КУБГУ.png"
-import img4 from "../../img/Газпром.png"
+import img1 from "../img/Росатом.png"
+import img2 from "../img/ВТБ.png"
+import img3 from "../img/КУБГУ.png"
+import img4 from "../img/Газпром.png"
 const Workwithus = () => {
   const logos = [
     img1,
