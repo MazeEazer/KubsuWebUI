@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import "./styles/main.css"
 import "./styles/media.css"
 import "./styles/normalize.css"
@@ -13,24 +14,36 @@ import Reviews from "./components/Reviews"
 import Workwithus from "./components/WorkWithUS/Workwithus"
 import FAQ from "./components/FAQ"
 import Footer from "./components/Footer"
+import PopUpForm from "./components/PopUpForm/PopUpForm"
+
 function App() {
   return (
-    <>
-      <Header />
-      <main className="main">
-        <Advantages />
-        <Support />
-        <Drupal />
-        <Tariffs />
-        <Tasks />
-        <Team />
-        <Cases />
-        <Reviews />
-        <Workwithus />
-        <FAQ />
-        <Footer />
-      </main>
-    </>
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Header />
+              <main className="main">
+                <Advantages />
+                <Support />
+                <Drupal />
+                <Tariffs />
+                <Tasks />
+                <Team />
+                <Cases />
+                <Reviews />
+                <Workwithus />
+                <FAQ />
+              </main>
+              <Footer />
+            </>
+          }
+        />
+        <Route path="/contact-form" element={<PopUpForm />} />
+      </Routes>
+    </Router>
   )
 }
 

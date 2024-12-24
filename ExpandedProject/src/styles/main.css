@@ -356,7 +356,7 @@ img {
   border: 2px solid #f14d34;
   border-radius: 5px;
   z-index: 5;
-  transition: 0.3s background-color;
+  transition: 0.3s color;
 }
 .hero__btn:hover {
   background-color: #f14d34; /* Оранжевый цвет при наведении */
@@ -1258,59 +1258,6 @@ img {
 }
 
 /* workWithUs */
-.workWithUs {
-  margin-bottom: 70px;
-}
-
-.inf__title {
-  margin-bottom: 10px;
-  font-size: 28px;
-  text-align: center;
-}
-
-.inf__text {
-  margin-bottom: 20px;
-  color: var(--grey-color);
-}
-
-.sliders-container {
-  width: 100%;
-  overflow: hidden;
-}
-
-.image-slider {
-  width: 100%;
-  overflow: hidden;
-  margin: 20px 0;
-  position: relative;
-}
-
-.image-slider__wrapper {
-  display: flex;
-  will-change: transform;
-  transition: transform 0.3s ease;
-}
-
-.image-slider__slide {
-  flex: 0 0 auto;
-  width: 200px;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-.image-slider__image {
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-}
-
-.image-slider__image img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
 
 /* FAQ */
 .FAQ {
@@ -1609,9 +1556,6 @@ img {
   font-size: 14px;
   line-height: 20px;
   color: var(--grey-color);
-}
-.error-message {
-  color: red;
 }
 #success-message,
 #error-message {

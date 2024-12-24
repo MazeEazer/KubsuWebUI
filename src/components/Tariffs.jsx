@@ -1,4 +1,12 @@
+import { useNavigate } from "react-router-dom"
+
 const Tariffs = () => {
+  const navigate = useNavigate()
+
+  const handleContactClick = () => {
+    navigate("/contact-form")
+  }
+
   return (
     <section className="tariffs">
       <div className="fon">
@@ -22,9 +30,12 @@ const Tariffs = () => {
                   Предоплата от&nbsp;6&nbsp;000 рублей в&nbsp;месяц
                 </li>
               </ul>
-              <button className="card__btn btn__reset">
-                <a href="#contacts">СВЯЖИТЕСЬ С НАМИ!</a>
-              </button>
+              <button
+                className="card__btn btn__reset"
+                onClick={handleContactClick}
+              >
+                СВЯЖИТЕСЬ С НАМИ!
+              </button>{" "}
             </div>
             <div className="card main-card">
               <div className="card__header">
@@ -45,10 +56,11 @@ const Tariffs = () => {
                   Предоплата от&nbsp;30&nbsp;000 рублей в&nbsp;месяц
                 </li>
               </ul>
-              <button className="card__btn card__btn-alt btn__reset">
-                <a href="#contacts" className="">
-                  СВЯЖИТЕСЬ С НАМИ!
-                </a>
+              <button
+                className="card__btn card__btn-alt btn__reset"
+                onClick={handleContactClick}
+              >
+                СВЯЖИТЕСЬ С НАМИ!
               </button>
             </div>
             <div className="card">
@@ -70,10 +82,11 @@ const Tariffs = () => {
                   Предоплата от&nbsp;270&nbsp;000 рублей в&nbsp;месяц
                 </li>
               </ul>
-              <button className="card__btn btn__reset">
-                <a href="#contacts" className="">
-                  СВЯЖИТЕСЬ С НАМИ!
-                </a>
+              <button
+                className="card__btn btn__reset"
+                onClick={handleContactClick}
+              >
+                СВЯЖИТЕСЬ С НАМИ!
               </button>
             </div>
           </div>
@@ -82,9 +95,9 @@ const Tariffs = () => {
               Вам не&nbsp;подходят наши тарифы? Оставьте заявку и мы предложим
               вам индивидуальные условия!
             </p>
-            <a href="#contacts" className="individ">
+            <h2 onClick={handleContactClick} className="individ">
               ПОЛУЧИТЬ ИНДИВИДУАЛЬНЫЙ ТАРИФ
-            </a>
+            </h2>
           </div>
         </div>
       </div>

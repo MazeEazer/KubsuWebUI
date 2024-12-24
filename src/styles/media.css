@@ -166,15 +166,18 @@
   }
 
   .dropdown__list {
-    display: none;
+    display: block;
+    max-height: 0;
+    overflow: hidden;
     position: absolute;
     background-color: #f14d34;
     min-width: 160px;
     z-index: 1000;
+    transition: max-height 0.5s ease-out;
   }
 
   .dropdown:hover .dropdown__list {
-    display: block;
+    max-height: 300px;
   }
 
   .dropdown__item {
