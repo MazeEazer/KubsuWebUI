@@ -1,7 +1,8 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { useForm } from "react-hook-form"
 import useLocalStorage from "../hooks/useLocalStorage"
 import { ClipLoader } from "react-spinners"
+import ReCAPTCHA from "react-google-recaptcha"
 
 const FooterForm = () => {
   const [FIO, setFIO] = useLocalStorage("FIO", "")
@@ -9,7 +10,9 @@ const FooterForm = () => {
   const [EMAIL, setEMAIL] = useLocalStorage("EMAIL", "")
   const [COMMENT, setCOMMENT] = useLocalStorage("COMMENT", "")
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [captchaError, setCaptchaError] = useState(false) // Состояние для ошибки капчи
 
+  const recaptchaRef = useRef(null)
   const {
     register,
     handleSubmit,
@@ -21,6 +24,14 @@ const FooterForm = () => {
   const [errorMessage, setErrorMessage] = useState(false)
 
   const onSubmit = async (data) => {
+    const token = recaptchaRef.current.getValue()
+    if (!token) {
+      setCaptchaError(true)
+      return
+    }
+
+    setCaptchaError(false) // Сбросить сообщение об ошибке капчи
+
     setIsSubmitting(true)
 
     try {
@@ -60,9 +71,17 @@ const FooterForm = () => {
       }, 5000)
     } finally {
       setIsSubmitting(false)
+      recaptchaRef.current.reset()
     }
   }
-
+  const onChange = (token) => {
+    if (token) {
+      console.log("Капча прошла успешно:", token)
+      setCaptchaError(false)
+    } else {
+      console.error("Ошибка при прохождении капчи.")
+    }
+  }
   return (
     <form
       className="footer__form flex"
@@ -142,7 +161,16 @@ const FooterForm = () => {
           {errors.agreement.message}
         </span>
       )}
-
+      <ReCAPTCHA
+        ref={recaptchaRef}
+        sitekey="6LfdnqUqAAAAAHSeM-oDgioytXnrSNQpCuEeqS_i"
+        onChange={onChange}
+      />
+      {captchaError && (
+        <span className="error-message" style={{ color: "red" }}>
+          Пожалуйста, подтвердите капчу.
+        </span>
+      )}
       <button className="footer__btn btn__reset" type="submit">
         {isSubmitting ? (
           <ClipLoader color="#ffffff" size={20} />
