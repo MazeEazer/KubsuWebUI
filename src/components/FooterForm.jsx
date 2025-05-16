@@ -30,45 +30,44 @@ const FooterForm = () => {
       return
     }
 
-    setCaptchaError(false) // Сбросить сообщение об ошибке капчи
-
+    setCaptchaError(false)
     setIsSubmitting(true)
 
     try {
-      const response = await fetch("https://formcarry.com/s/m1h-mKEGfLX", {
+      const response = await fetch("http://yourdomain.com/api.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          recaptcha: token,
+        }),
       })
 
-      if (!response.ok) {
-        throw new Error("Ошибка при отправке формы")
+      const result = await response.json()
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Ошибка при отправке формы")
       }
 
       reset()
-
       setFIO("")
       setPHONE("")
       setEMAIL("")
       setCOMMENT("")
 
-      setSuccessMessage(true)
+      setSuccessMessage(result.message)
       setErrorMessage(false)
 
-      setTimeout(() => {
-        setSuccessMessage(false)
-      }, 5000)
+      // Показать логин/пароль если нужно
+      if (result.credentials) {
+        console.log("Ваши учетные данные:", result.credentials)
+      }
     } catch (error) {
       console.error("Error submitting form:", error)
-      setErrorMessage(true)
+      setErrorMessage(error.message)
       setSuccessMessage(false)
-
-      setTimeout(() => {
-        setErrorMessage(false)
-      }, 5000)
     } finally {
       setIsSubmitting(false)
       recaptchaRef.current.reset()
