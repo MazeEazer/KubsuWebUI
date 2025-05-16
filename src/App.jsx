@@ -1,7 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import "./styles/main.css"
-import "./styles/media.css"
-import "./styles/normalize.css"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Header from "./components/Header"
 import Advantages from "./components/Advantages"
 import Support from "./components/Support"
@@ -18,32 +15,30 @@ import PopUpForm from "./components/PopUpForm/PopUpForm"
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter basename="/project">
+      <Header />
       <Routes>
         <Route
           path="/"
           element={
-            <>
-              <Header />
-              <main className="main">
-                <Advantages />
-                <Support />
-                <Drupal />
-                <Tariffs />
-                <Tasks />
-                <Team />
-                <Cases />
-                <Reviews />
-                <Workwithus />
-                <FAQ />
-              </main>
-              <Footer />
-            </>
+            <main className="main">
+              <Advantages />
+              <Support />
+              <Drupal />
+              <Tariffs />
+              <Tasks />
+              <Team />
+              <Cases />
+              <Reviews />
+              <Workwithus />
+              <FAQ />
+            </main>
           }
         />
         <Route path="/contact-form" element={<PopUpForm />} />
       </Routes>
-    </Router>
+      <Footer />
+    </BrowserRouter>
   )
 }
 

@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "http://u68818.kubsu-dev.ru/project",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
