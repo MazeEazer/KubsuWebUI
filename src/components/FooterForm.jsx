@@ -40,7 +40,12 @@ const FooterForm = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          ...data,
+          FIO: data.FIO,
+          PHONE: data.PHONE,
+          EMAIL: data.EMAIL,
+          BIO: data.COMMENT,
+          CONTRACT: data.agreement,
+          LANGUAGES: ["JavaScript", "PHP"], // Пример, можно динамически получать
           recaptcha: token,
         }),
       })
@@ -60,14 +65,21 @@ const FooterForm = () => {
       setSuccessMessage(result.message)
       setErrorMessage(false)
 
-      // Показать логин/пароль если нужно
+      // Показать логин/пароль пользователю
       if (result.credentials) {
-        console.log("Ваши учетные данные:", result.credentials)
+        alert(
+          `Ваши учетные данные:\nЛогин: ${result.credentials.login}\nПароль: ${result.credentials.password}`
+        )
       }
     } catch (error) {
       console.error("Error submitting form:", error)
       setErrorMessage(error.message)
       setSuccessMessage(false)
+
+      // Обработка ошибок валидации
+      if (error.errors) {
+        // Можно обновить состояния ошибок для отображения в форме
+      }
     } finally {
       setIsSubmitting(false)
       recaptchaRef.current.reset()
