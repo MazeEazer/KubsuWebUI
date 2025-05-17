@@ -1,5 +1,6 @@
 // hooks/useLocalStorage.js
 import { useState } from "react"
+
 function useLocalStorage(key, initialValue) {
   const [storedValue, setStoredValue] = useState(() => {
     try {
@@ -10,7 +11,7 @@ function useLocalStorage(key, initialValue) {
     }
   })
 
-  const setValueAndStore = (value) => {
+  const setValue = (value) => {
     try {
       setStoredValue(value)
       window.localStorage.setItem(key, JSON.stringify(value))
@@ -19,7 +20,7 @@ function useLocalStorage(key, initialValue) {
     }
   }
 
-  return [storedValue, setValueAndStore]
+  return [storedValue, setValue]
 }
 
 export default useLocalStorage

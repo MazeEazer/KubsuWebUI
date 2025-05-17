@@ -35,7 +35,6 @@ const FooterForm = () => {
     },
   })
 
-  // Проверяем авторизацию через куки
   useEffect(() => {
     const cookieLogin = document.cookie
       .split("; ")
@@ -47,7 +46,6 @@ const FooterForm = () => {
     }
   }, [])
 
-  // Получаем данные пользователя
   const fetchUserData = async (login) => {
     try {
       const response = await fetch(
@@ -55,7 +53,7 @@ const FooterForm = () => {
         {
           method: "GET",
           headers: {
-            Authorization: "Basic " + btoa(`${login}:password`), // можно улучшить через хранение пароля или повторный ввод
+            Authorization: "Basic " + btoa(`${login}:password`),
           },
         }
       )
@@ -86,6 +84,8 @@ const FooterForm = () => {
     setSuccessMessage("")
     setErrorMessage("")
 
+    const url = "/project/api/"
+    const method = isLoggedIn ? "PUT" : "POST"
     const body = JSON.stringify({
       FIO: formData.FIO,
       PHONE: formData.PHONE,
@@ -95,16 +95,13 @@ const FooterForm = () => {
       LANGUAGES: LANGUAGES,
     })
 
-    const url = "/project/api/"
-    const method = isLoggedIn ? "PUT" : "POST"
-    const headers = {
-      "Content-Type": "application/json",
-    }
-
     try {
       const response = await fetch(url, {
         method,
-        headers,
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRF-Token": "<?=$_SESSION['csrf_token']?>",
+        },
         body,
       })
 
@@ -116,18 +113,16 @@ const FooterForm = () => {
             setError(field.toLowerCase(), { type: "manual", message })
           })
         } else {
-          throw new Error(result.message || "Ошибка при отправке формы")
+          throw new Error(result.message || "Ошибка отправки формы")
         }
       }
 
-      // Если регистрация — покажи логин и пароль
       if (result.credentials) {
         alert(
-          `Ваш логин: ${result.credentials.login}\nПароль: ${result.credentials.password}`
+          `Логин: ${result.credentials.login}\nПароль: ${result.credentials.password}`
         )
       }
 
-      // Сброс формы
       reset()
       setFIO("")
       setPHONE("")
@@ -144,11 +139,7 @@ const FooterForm = () => {
   }
 
   return (
-    <form
-      className="footer__form flex"
-      id="form"
-      onSubmit={handleSubmit(onSubmit)}
-    >
+    <form className="footer__form flex" onSubmit={handleSubmit(onSubmit)}>
       {/* ФИО */}
       <input
         className={`input ${errors.FIO ? "input--error" : ""}`}
@@ -157,7 +148,7 @@ const FooterForm = () => {
         {...register("FIO", {
           required: "Ваше имя обязательно",
           pattern: {
-            value: /^[А-Яа-яA-Za-z\s]{1,150}$/,
+            value: /^[А-ЯЁа-яёA-Za-z\s]{1,150}$/u,
             message: "Некорректное ФИО",
           },
         })}
@@ -176,7 +167,7 @@ const FooterForm = () => {
         {...register("PHONE", {
           required: "Телефон обязателен",
           pattern: {
-            value: /^[+]?[0-9]{10,14}$/,
+            value: /^\+?\d{10,15}$/,
             message: "Некорректный номер телефона",
           },
         })}
@@ -214,7 +205,7 @@ const FooterForm = () => {
         {...register("COMMENT")}
         defaultValue={COMMENT}
         onChange={(e) => setCOMMENT(e.target.value)}
-      ></textarea>
+      />
 
       {/* Языки программирования */}
       <label className="form__check">
@@ -237,19 +228,16 @@ const FooterForm = () => {
         </select>
       </label>
 
-      {/* Чекбокс соглашения */}
+      {/* Согласие */}
       <label className="form__check">
         <input
           className="label__input"
           type="checkbox"
-          {...register("agreement", {
-            required: "Необходимо согласие",
-          })}
+          {...register("agreement", { required: "Необходимо согласие" })}
         />
         Отправляя заявку, я&nbsp;даю согласие на
         <a href="#"> обработку своих персональных данных.*</a>
       </label>
-
       {errors.agreement && (
         <span className="error-message" style={{ color: "red" }}>
           {errors.agreement.message}
@@ -269,9 +257,8 @@ const FooterForm = () => {
         )}
       </button>
 
-      {/* Сообщения об успехе или ошибке */}
+      {/* Сообщения */}
       {successMessage && <div style={{ color: "green" }}>{successMessage}</div>}
-
       {errorMessage && <div style={{ color: "red" }}>{errorMessage}</div>}
     </form>
   )
