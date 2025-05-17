@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useForm } from "react-hook-form"
 import useLocalStorage from "../hooks/useLocalStorage"
 import { ClipLoader } from "react-spinners"
@@ -8,67 +8,136 @@ const FooterForm = () => {
   const [PHONE, setPHONE] = useLocalStorage("PHONE", "")
   const [EMAIL, setEMAIL] = useLocalStorage("EMAIL", "")
   const [COMMENT, setCOMMENT] = useLocalStorage("COMMENT", "")
+  const [LANGUAGES, setLANGUAGES] = useLocalStorage("LANGUAGES", [
+    "JavaScript",
+    "PHP",
+  ])
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [successMessage, setSuccessMessage] = useState("")
+  const [errorMessage, setErrorMessage] = useState("")
+
+  const allLanguages = ["JavaScript", "PHP", "Python", "Java", "C++", "Go"]
 
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, setError },
+    setValue,
     reset,
-  } = useForm()
+  } = useForm({
+    defaultValues: {
+      FIO,
+      PHONE,
+      EMAIL,
+      COMMENT,
+      agreement: true,
+    },
+  })
 
-  const [successMessage, setSuccessMessage] = useState(false)
-  const [errorMessage, setErrorMessage] = useState(false)
+  // Проверяем авторизацию через куки
+  useEffect(() => {
+    const cookieLogin = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("login="))
 
-  const onSubmit = async (data) => {
+    if (cookieLogin) {
+      setIsLoggedIn(true)
+      fetchUserData(cookieLogin.split("=")[1])
+    }
+  }, [])
+
+  // Получаем данные пользователя
+  const fetchUserData = async (login) => {
+    try {
+      const response = await fetch(
+        `/project/api/?login=${encodeURIComponent(login)}`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: "Basic " + btoa(`${login}:password`), // можно улучшить через хранение пароля или повторный ввод
+          },
+        }
+      )
+
+      if (!response.ok) throw new Error("Ошибка загрузки данных")
+
+      const data = await response.json()
+
+      if (data.success && data.user) {
+        setValue("FIO", data.user.FIO || "")
+        setValue("PHONE", data.user.PHONE || "")
+        setValue("EMAIL", data.user.EMAIL || "")
+        setValue("COMMENT", data.user.BIO || "")
+
+        setFIO(data.user.FIO || "")
+        setPHONE(data.user.PHONE || "")
+        setEMAIL(data.user.EMAIL || "")
+        setCOMMENT(data.user.BIO || "")
+        setLANGUAGES(data.user.LANGUAGES || [])
+      }
+    } catch (error) {
+      console.error("Не удалось загрузить данные:", error.message)
+    }
+  }
+
+  const onSubmit = async (formData) => {
     setIsSubmitting(true)
+    setSuccessMessage("")
+    setErrorMessage("")
+
+    const body = JSON.stringify({
+      FIO: formData.FIO,
+      PHONE: formData.PHONE,
+      EMAIL: formData.EMAIL,
+      BIO: formData.COMMENT,
+      CONTRACT: formData.agreement,
+      LANGUAGES: LANGUAGES,
+    })
+
+    const url = "/project/api/"
+    const method = isLoggedIn ? "PUT" : "POST"
+    const headers = {
+      "Content-Type": "application/json",
+    }
 
     try {
-      const response = await fetch("http://yourdomain.com/api.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          FIO: data.FIO,
-          PHONE: data.PHONE,
-          EMAIL: data.EMAIL,
-          BIO: data.COMMENT,
-          CONTRACT: data.agreement,
-          LANGUAGES: ["JavaScript", "PHP"], // Пример, можно динамически получать
-        }),
+      const response = await fetch(url, {
+        method,
+        headers,
+        body,
       })
 
       const result = await response.json()
 
       if (!response.ok || !result.success) {
-        throw new Error(result.message || "Ошибка при отправке формы")
+        if (result.errors && typeof result.errors === "object") {
+          Object.entries(result.errors).forEach(([field, message]) => {
+            setError(field.toLowerCase(), { type: "manual", message })
+          })
+        } else {
+          throw new Error(result.message || "Ошибка при отправке формы")
+        }
       }
 
+      // Если регистрация — покажи логин и пароль
+      if (result.credentials) {
+        alert(
+          `Ваш логин: ${result.credentials.login}\nПароль: ${result.credentials.password}`
+        )
+      }
+
+      // Сброс формы
       reset()
       setFIO("")
       setPHONE("")
       setEMAIL("")
       setCOMMENT("")
+      setLANGUAGES(["JavaScript", "PHP"])
 
       setSuccessMessage(result.message)
-      setErrorMessage(false)
-
-      // Показать логин/пароль пользователю
-      if (result.credentials) {
-        alert(
-          `Ваши учетные данные:\nЛогин: ${result.credentials.login}\nПароль: ${result.credentials.password}`
-        )
-      }
     } catch (error) {
-      console.error("Error submitting form:", error)
       setErrorMessage(error.message)
-      setSuccessMessage(false)
-
-      // Обработка ошибок валидации
-      if (error.errors) {
-        // Можно обновить состояния ошибок для отображения в форме
-      }
     } finally {
       setIsSubmitting(false)
     }
@@ -77,22 +146,29 @@ const FooterForm = () => {
   return (
     <form
       className="footer__form flex"
-      method="POST"
       id="form"
       onSubmit={handleSubmit(onSubmit)}
     >
+      {/* ФИО */}
       <input
         className={`input ${errors.FIO ? "input--error" : ""}`}
         type="text"
         placeholder="Ваше имя"
-        {...register("FIO", { required: "Ваше имя обязательно" })}
-        value={FIO}
+        {...register("FIO", {
+          required: "Ваше имя обязательно",
+          pattern: {
+            value: /^[А-Яа-яA-Za-z\s]{1,150}$/,
+            message: "Некорректное ФИО",
+          },
+        })}
+        defaultValue={FIO}
         onChange={(e) => setFIO(e.target.value)}
       />
       {errors.FIO && (
         <span className="error-message">{errors.FIO.message}</span>
       )}
 
+      {/* Телефон */}
       <input
         className={`input ${errors.PHONE ? "input--error" : ""}`}
         type="tel"
@@ -104,13 +180,14 @@ const FooterForm = () => {
             message: "Некорректный номер телефона",
           },
         })}
-        value={PHONE}
+        defaultValue={PHONE}
         onChange={(e) => setPHONE(e.target.value)}
       />
       {errors.PHONE && (
         <span className="error-message">{errors.PHONE.message}</span>
       )}
 
+      {/* Email */}
       <input
         className={`input ${errors.EMAIL ? "input--error" : ""}`}
         type="email"
@@ -122,27 +199,52 @@ const FooterForm = () => {
             message: "Некорректный E-mail",
           },
         })}
-        value={EMAIL}
+        defaultValue={EMAIL}
         onChange={(e) => setEMAIL(e.target.value)}
       />
       {errors.EMAIL && (
         <span className="error-message">{errors.EMAIL.message}</span>
       )}
 
+      {/* Биография */}
       <textarea
         style={{ resize: "none" }}
         className="form__textarea"
         placeholder="Ваш комментарий"
         {...register("COMMENT")}
-        value={COMMENT}
+        defaultValue={COMMENT}
         onChange={(e) => setCOMMENT(e.target.value)}
       ></textarea>
 
+      {/* Языки программирования */}
+      <label className="form__check">
+        Выберите языки программирования:
+        <select
+          multiple
+          value={LANGUAGES}
+          onChange={(e) =>
+            setLANGUAGES([
+              ...Array.from(e.target.selectedOptions, (o) => o.value),
+            ])
+          }
+          style={{ width: "100%", marginBottom: "10px" }}
+        >
+          {allLanguages.map((lang) => (
+            <option key={lang} value={lang}>
+              {lang}
+            </option>
+          ))}
+        </select>
+      </label>
+
+      {/* Чекбокс соглашения */}
       <label className="form__check">
         <input
           className="label__input"
           type="checkbox"
-          {...register("agreement", { required: "Необходимо согласие" })}
+          {...register("agreement", {
+            required: "Необходимо согласие",
+          })}
         />
         Отправляя заявку, я&nbsp;даю согласие на
         <a href="#"> обработку своих персональных данных.*</a>
@@ -154,7 +256,12 @@ const FooterForm = () => {
         </span>
       )}
 
-      <button className="footer__btn btn__reset" type="submit">
+      {/* Кнопка отправки */}
+      <button
+        className="footer__btn btn__reset"
+        type="submit"
+        disabled={isSubmitting}
+      >
         {isSubmitting ? (
           <ClipLoader color="#ffffff" size={20} />
         ) : (
@@ -162,17 +269,10 @@ const FooterForm = () => {
         )}
       </button>
 
-      {successMessage && (
-        <div style={{ color: "green" }}>
-          Спасибо за вашу заявку! Мы свяжемся с вами в ближайшее время.
-        </div>
-      )}
+      {/* Сообщения об успехе или ошибке */}
+      {successMessage && <div style={{ color: "green" }}>{successMessage}</div>}
 
-      {errorMessage && (
-        <div style={{ color: "red" }}>
-          Произошла ошибка при отправке формы. Пожалуйста, попробуйте снова.
-        </div>
-      )}
+      {errorMessage && <div style={{ color: "red" }}>{errorMessage}</div>}
     </form>
   )
 }
