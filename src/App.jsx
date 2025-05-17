@@ -12,6 +12,9 @@ import Workwithus from "./components/Workwithus"
 import FAQ from "./components/FAQ"
 import Footer from "./components/Footer"
 import PopUpForm from "./components/PopUpForm/PopUpForm"
+import "./styles/main.css"
+import "./styles/media.css"
+import "./styles/normalize.css"
 
 function App() {
   return (

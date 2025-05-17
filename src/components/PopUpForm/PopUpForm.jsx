@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom"
 import { useForm } from "react-hook-form"
 import useLocalStorage from "../../hooks/useLocalStorage"
 import { ClipLoader } from "react-spinners"
-import ReCAPTCHA from "react-google-recaptcha"
 
 import styles from "./PopUpForm.module.css"
 
@@ -12,8 +11,6 @@ const PopUpForm = () => {
   const [phone, setPhone] = useLocalStorage("phone", "")
   const [email, setEmail] = useLocalStorage("email", "")
   const [comment, setComment] = useLocalStorage("comment", "")
-  const [captchaError, setCaptchaError] = useState(false)
-  const recaptchaRef = useRef(null)
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [successMessage, setSuccessMessage] = useState(false)
@@ -110,16 +107,9 @@ const PopUpForm = () => {
   }, [errorMessage])
 
   const onSubmit = async (data) => {
-    const token = recaptchaRef.current.getValue()
-    if (!token) {
-      setCaptchaError(true)
-      return
-    }
-    setCaptchaError(false)
-
     setIsSubmitting(true)
     try {
-      const response = await fetch("https://formcarry.com/s/m1h-mKEGfLX", {
+      const response = await fetch("https://formcarry.com/s/m1h-mKEGfLX ", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -140,15 +130,6 @@ const PopUpForm = () => {
       setErrorMessage(true)
     } finally {
       setIsSubmitting(false)
-      recaptchaRef.current.reset()
-    }
-  }
-  const onChange = (token) => {
-    if (token) {
-      console.log("Капча прошла успешно:", token)
-      setCaptchaError(false)
-    } else {
-      console.error("Ошибка при прохождении капчи.")
     }
   }
 
@@ -242,17 +223,6 @@ const PopUpForm = () => {
           </label>
           {errors.agreement && (
             <span className={styles.error}>{errors.agreement.message}</span>
-          )}
-
-          <ReCAPTCHA
-            ref={recaptchaRef}
-            sitekey="6LfdnqUqAAAAAHSeM-oDgioytXnrSNQpCuEeqS_i"
-            onChange={onChange}
-          />
-          {captchaError && (
-            <span className="error-message" style={{ color: "red" }}>
-              Пожалуйста, подтвердите капчу.
-            </span>
           )}
 
           <button
